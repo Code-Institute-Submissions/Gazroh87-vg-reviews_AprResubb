@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VGReviews</title>
+</head>
+<body>
+    {% for review in reviews %}
+        {{ review.title }}<br>
+        {{ review.platform }}<br>
+        {{ review.review}}<br>
+        {{ review.completed }}<br>
+    {% endfor %}
+</body>
+</html>

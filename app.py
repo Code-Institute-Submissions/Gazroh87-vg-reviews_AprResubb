@@ -24,14 +24,15 @@ def home():
     # return render_template("home.html", genres=genres, platforms=platforms)
 
 
+@app.route("/get_reviews")
+def get_reviews():
+    reviews = mongo.db.reviews.find()
+    return render_template("reviews.html", reviews=reviews)
+
+
 @app.route("/get_games")
 def get_games():
     return render_template("games.html", games=games)
-
-
-@app.route("/get_reviews")
-def get_reviews():
-    return render_template("reviews.html", reviews=reviews)
 
 
 @app.route("/get_genres")
