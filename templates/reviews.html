@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VGReviews</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>I'm extending the base template!</h2>
+
     {% for review in reviews %}
         {{ review.title }}<br>
         {{ review.platform }}<br>
         {{ review.review}}<br>
         {{ review.completed }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
