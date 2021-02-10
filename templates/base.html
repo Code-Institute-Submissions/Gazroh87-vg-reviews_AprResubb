@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Gary Hughes" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="{{ url_for('static', filename='favicons/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicons/favicon-32x32.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicons/favicon-16x16.png') }}" />
+    <link rel="manifest" href="{{ url_for('static', filename='favicons/site.webmanifest') }}" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
@@ -18,6 +24,51 @@
     <title>VGReviews</title>
 </head>
 <body>
+    <header>
+        <!-- top navbar -->
+        <nav class="nav-extended text-shadow black">
+        <div class="nav-wrapper">
+        <a href="{{ url_for('home') }}" class="brand-logo">
+            <span >
+                <img class="hide-on-med-only" src="{{ url_for('static', filename='images/vgr-logo.png') }}" alt="Logo of VGR letters inside generic game controller outline">
+                <img class="hide-logo show-on-large" src="{{ url_for('static', filename='images/vgreviews-logo.png') }}" alt="Logo of VGReviews">
+            </span>
+            <img id="tablet-size-logo" class="hide-logo show-on-medium" src="{{ url_for('static', filename='images/vgr-vgreviews-logo.png') }}" alt="Logo of VGR letters inside generic game controller outline next to VGReviews">
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="#">Logout</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li> 
+        </ul>
+        </div>
+        <!-- navbar tabs -->
+        <div class="nav-content">
+        <ul class="tabs tabs-transparent">
+            <li class="tab"><a href="#test1">Test 1</a></li>
+            <li class="tab"><a class="active" href="#test2">Test 2</a></li>
+            <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+            <li class="tab"><a href="#test4">Test 4</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <!-- mobile sidenav -->
+    <div class="sidenav" id="mobile-demo">
+        <div class="sidenav-header black">
+            <a href="#"><img class="sidenav-logo hide-logo show-on-small" src="{{ url_for('static', filename='images/vgr-logo.png') }}" alt="Logo of VGR letters inside generic game controller outline above VGReviews"></a>
+            <a href="#"><img class="sidenav-logo hide-logo show-on-medium" src="{{ url_for('static', filename='images/vgreviews-square-logo.png') }}" alt="Logo of VGR letters inside generic game controller outline above VGReviews"></a>
+            <a href="#" class="sidenav-close"><i class="fas fa-times"></i></a>
+        </div>
+        <ul class>  
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="#">Logout</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li> 
+        </ul>
+    </div>
+  </header>
     
     <h1>H1 injected from the base template!</h1>
     {% block content %}

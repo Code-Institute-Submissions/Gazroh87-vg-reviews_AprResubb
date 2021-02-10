@@ -1,0 +1,103 @@
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5)
+}
+
+.hide-logo {
+    display: none;
+}
+
+.nav-wrapper {
+    padding: 5px;
+}
+
+.brand-logo span {
+    display: flex;
+    align-items: center;
+}
+
+.tabs {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo span img:first-of-type {
+    height: 56px
+}
+
+nav .nav-wrapper .sidenav-trigger i {
+    height: 32px;
+    border: 1px solid #ffffff;
+    text-align: center;
+    line-height: 1;
+    font-size: 18px;
+    padding: 6px 8px;
+    border-radius: 3px;
+    color: #39FF14;
+    background-clip: padding-box;
+    text-shadow: 4px 4px 6px rgba(0,0,0,0.4);
+}
+
+.sidenav-header {
+    height: 136px;
+    padding: 21px;
+    box-sizing: border-box;
+}
+
+.sidenav {
+    border-left: 1px solid #39FF14;
+}
+
+.sidenav-header .sidenav-close {
+    float: right;
+    position: relative;
+    border: 1px solid #ffffff;
+    margin: 0 2px;
+    text-align: center;
+    line-height: 1;
+    font-size: 18px;
+    padding: 6px 8px;
+    border-radius: 3px;
+    color: #39FF14;
+    background-clip: padding-box;
+    text-shadow: 4px 4px 6px rgba(0,0,0,0.4);
+}
+
+.sidenav-logo {
+    height: 94px;
+    vertical-align: middle;
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+}
+
+@media only screen and (min-width: 601px) {
+    #tablet-size-logo {
+        height: 26px;
+        margin: 19px 0;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 991px) {
+    .sidenav .show-on-small {
+        display: none;    
+    }
+
+    .sidenav .show-on-medium {
+        display: inline !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sidenav .show-on-medium {
+        display: none;
+    }
+
+    .sidenav .show-on-small {
+        display: inline !important;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .brand-logo span img:first-of-type {
+        height: 112px
+    }
+}

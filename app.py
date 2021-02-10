@@ -20,8 +20,8 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     genres = mongo.db.genres.find()
-    return "Flask is working" + str(mongo.db.genres.find_one())
-    # return render_template("home.html", genres=genres, platforms=platforms)
+    # return "Flask is working" + str(mongo.db.genres.find_one())
+    return render_template("home.html", genres=genres)
 
 
 @app.route("/get_reviews")
