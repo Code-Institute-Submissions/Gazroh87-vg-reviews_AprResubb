@@ -31,7 +31,7 @@
 
 nav .nav-wrapper .sidenav-trigger i {
     height: 32px;
-    border: 1px solid #ffffff;
+    border: 1px solid white;
     text-align: center;
     line-height: 1;
     font-size: 18px;
@@ -55,7 +55,7 @@ nav .nav-wrapper .sidenav-trigger i {
 .sidenav-header .sidenav-close {
     float: right;
     position: relative;
-    border: 1px solid #ffffff;
+    border: 1px solid white;
     margin: 0 2px;
     text-align: center;
     line-height: 1;
@@ -73,6 +73,10 @@ nav .nav-wrapper .sidenav-trigger i {
     -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
 }
 
+.flashed h4 {
+    line-height: 2;
+}
+
 form i {
     color: #39FF14;
 }
@@ -85,6 +89,10 @@ form i {
 .btn-large i {
     vertical-align: middle;
     margin: 5px;
+}
+
+.input-field input {
+    color: white;
 }
 
 @media only screen and (min-width: 601px) {
