@@ -39,7 +39,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="#">Logout</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li> 
         </ul>
         </div>
@@ -64,7 +64,7 @@
         </div>
         <ul class>  
             <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="#">Profile</a></li>
+            <li><a href="#">Account</a></li>
             <li><a href="#">Reviews</a></li>
             <li><a href="#">Add Review</a></li>
             <li><a href="#">Game Gallery</a></li>
@@ -74,7 +74,7 @@
             <li><a href="#">Manage Genres</a></li>
             <li><a href="#">Manage Platforms</a></li>
             <li><a href="#">Logout</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li> 
         </ul>
     </div>
