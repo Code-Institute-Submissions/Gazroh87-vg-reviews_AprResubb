@@ -26,7 +26,7 @@
 <body>
     <header>
         <!-- top navbar -->
-        <nav class="nav-extended text-shadow black">
+        <nav class="nav-extended text-shadow-light black">
         <div class="nav-wrapper">
         <a href="{{ url_for('home') }}" class="brand-logo">
             <span >
@@ -40,7 +40,7 @@
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="#">Logout</a></li>
             <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li> 
+            <li><a href="{{ url_for('register') }}">Register</a></li> 
         </ul>
         </div>
         <!-- navbar tabs -->
@@ -75,7 +75,7 @@
             <li><a href="#">Manage Platforms</a></li>
             <li><a href="#">Logout</a></li>
             <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li> 
+            <li><a href="{{ url_for('register') }}">Register</a></li> 
         </ul>
     </div>
   </header>
