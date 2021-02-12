@@ -90,6 +90,14 @@ def account(username):
     return redirect(url_for("login"))
 
 
+@app.route("/logout")
+def logout():
+    # remove user from session cookies
+    flash("You are now logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
 @app.route("/get_reviews")
 def get_reviews():
     reviews = mongo.db.reviews.find()
