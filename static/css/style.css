@@ -142,14 +142,32 @@ button > .btn-large {
     line-height: 36px;
 }
 
+.btn-large span {
+    margin-right: 10px;
+}
+
 .btn-large span,
 .btn-large i {
     vertical-align: middle;
-    margin: 5px;
+}
+
+.input-field span {
+    color: #9e9e9e;
 }
 
 .input-field input {
     color: white;
+}
+
+.input-field > label {
+    color: white;
+}
+
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default) {
+    height: 2.5rem;
+    margin: 8px 0;
+    margin-left: 3rem;
 }
 
 .text-muted {
