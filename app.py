@@ -20,9 +20,9 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    genres = mongo.db.genres.find()
+    # genres = mongo.db.genres.find()
     # return "Flask is working" + str(mongo.db.genres.find_one())
-    return render_template("home.html", genres=genres)
+    return render_template("home.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -44,7 +44,7 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash("Account Registered!")
         return redirect(url_for("account", username=session["user"]))
     return render_template("register.html")
 
