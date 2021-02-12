@@ -98,16 +98,19 @@ def get_reviews():
 
 @app.route("/get_games")
 def get_games():
+    games = list(mongo.db.games.find().sort("title", 1))
     return render_template("games.html", games=games)
 
 
 @app.route("/get_genres")
 def get_genres():
+    genres = list(mongo.db.genres.find().sort("genre", 1))
     return render_template("genres.html", genres=genres)
 
 
 @app.route("/get_platforms")
 def get_platforms():
+    platforms = list(mongo.db.platforms.find().sort("platform", 1))
     return render_template("platforms.html", platforms=platforms)
 
 

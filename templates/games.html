@@ -3,4 +3,15 @@
 
     <h2>I'm extending the base template!</h2>
 
+    {% for game in games %}
+        {{ game.title }}<br>
+        {{ game.img_url }}<br>
+        {{ game.description}}<br>
+        {{ game.genre }}<br>
+        {{ game.developer }}<br>
+        {{ game.platform }}<br>
+        {{ game.year }}<br>
+        {{ game.added_by }}<br>
+    {% endfor %}
+
 {% endblock %}

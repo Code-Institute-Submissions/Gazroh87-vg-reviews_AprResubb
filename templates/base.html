@@ -51,10 +51,10 @@
         <!-- navbar tabs -->
         <div class="nav-content">
         <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="#">All Platforms</a></li>
-            <li class="tab"><a href="#">All Genres</a></li>
-            <li class="tab"><a href="#">Game Gallery</a></li>
-            <li class="tab"><a href="#">Reviews</a></li>
+            <li class="tab"><a href="{{ url_for('get_platforms') }}">All Platforms</a></li>
+            <li class="tab"><a href="{{ url_for('get_genres') }}">All Genres</a></li>
+            <li class="tab"><a href="{{ url_for('get_games') }}">Game Gallery</a></li>
+            <li class="tab"><a href="{{ url_for('get_reviews') }}">Reviews</a></li>
             <li class="tab disabled"><a href="#">Disabled Tab</a></li>
         </ul>
         </div>
@@ -70,12 +70,12 @@
         <ul class>  
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
-            <li><a href="#">Reviews</a></li>
+            <li><a href="{{ url_for('get_reviews') }}">Reviews</a></li>
             <li><a href="#">Add Review</a></li>
-            <li><a href="#">Game Gallery</a></li>
+            <li><a href="{{ url_for('get_games') }}">Game Gallery</a></li>
             <li><a href="#">Add Game</a></li>
-            <li><a href="#">All Genres</a></li>
-            <li><a href="#">All Platforms</a></li>
+            <li><a href="{{ url_for('get_genres') }}">All Genres</a></li>
+            <li><a href="{{ url_for('get_platforms') }}">All Platforms</a></li>
             <li><a href="#">Manage Genres</a></li>
             <li><a href="#">Manage Platforms</a></li>
             <li><a href="#">Logout</a></li>
