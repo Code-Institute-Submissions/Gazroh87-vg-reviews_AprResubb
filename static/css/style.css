@@ -1,4 +1,4 @@
-html, body {
+* {
     font-family: 'Play', sans-serif;
 }
 
@@ -12,7 +12,9 @@ body {
     flex: 1 0 auto;
   }
 
-  h1, h2, h3, h4, 
+  h1 {
+    color: #39FF14;
+  }
 
   p {
     line-height: 2rem;
@@ -69,7 +71,7 @@ nav .nav-wrapper .sidenav-trigger i {
 }
 
 .sidenav {
-    border-left: 1px solid #39FF14;
+    border-left: 4px solid #39FF14;
 }
 
 .sidenav-header .sidenav-close {
@@ -108,14 +110,28 @@ nav .nav-wrapper .sidenav-trigger i {
     width: 100%;
 }
 
+.parallax-container .card-panel {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
 .call-btns {
     display: flex;
     justify-content: space-around;
     padding: 25px;
 }
 
+.call-btns .btn-large {
+    background-color: black;
+    color: white;
+    border: 2px solid #39FF14;
+}
+
 .icon-block {
     padding: 0 15px;
+}
+
+.icon-block h2 {
+    color: #39FF14;
 }
 
 form i {

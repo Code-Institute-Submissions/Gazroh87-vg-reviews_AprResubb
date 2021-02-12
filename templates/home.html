@@ -5,22 +5,28 @@
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
             <div class="container text-shadow">
-                <h1 class="header center">Video Game Reviews</h1>
-                <div class="row center">
-                    <h5 class="header col s12">Looking for your next game to 
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card-panel">
+                            <h1 class="header center">Video Game Reviews</h1>
+                            <div class="row center">
+                                <h5 class="header col s12">Looking for your next game to 
                         play? Or maybe you enjoy writing about your gaming 
                         journey. This is THE place to be.</h5>
-                </div>
-                <div class="call-btns">
-                    <a class="waves-effect waves-light btn-large flow-text teal lighten-1"
+                            </div>
+                            <div class="call-btns">
+                                <a class="waves-effect waves-light btn-large flow-text"
                     href="{{ url_for('get_reviews') }}">Reviews</a>
-                    {% if session.user %}
-                        <a class="waves-effect waves-light btn-large flow-text teal lighten-1" 
+                                    {% if session.user %}
+                                        <a class="waves-effect waves-light btn-large flow-text" 
                         href="#">Add Review</a>
-                    {% else %}
-                        <a class="waves-effect waves-light btn-large flow-text teal lighten-1"
+                                    {% else %}
+                                        <a class="waves-effect waves-light btn-large flow-text"
                         href="{{ url_for('register') }}">Register</a>
-                    {% endif %}
+                                    {% endif %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="parallax">
@@ -35,30 +41,30 @@
             <div class="row">
                 <div class="col s12 m4">
                     <div class="icon-block">
-                        <h2 class="center">
+                        <h2 class="center text-shadow">
                             <i class="fas fa-user-plus"></i>
                         </h2>
-                        <h5 class="center">Register an account</h5>
+                        <h5 class="center text-shadow">Register an account</h5>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
                             erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
                     </div>
                 </div>
                 <div class="col s12 m4">
                     <div class="icon-block">
-                        <h2 class="center">
+                        <h2 class="center text-shadow">
                             <i class="fas fa-search"></i>
                         </h2>
-                        <h5 class="center">Browse games and reviews</h5>
+                        <h5 class="center text-shadow">Browse games and reviews</h5>
                          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
                             erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
                     </div>
                 </div>
                 <div class="col s12 m4">
                     <div class="icon-block">
-                        <h2 class="center">
+                        <h2 class="center text-shadow">
                             <i class="fas fa-edit"></i>
                         </h2>
-                        <h5 class="center">Add your own reviews</h5>
+                        <h5 class="center text-shadow">Add your own reviews</h5>
                          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
                             erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
                     </div>
@@ -71,12 +77,18 @@
     <div class="parallax-container valign-wrapper">
         <div class="section no-pad-bot">
             <div class="container text-shadow">
-                <div class="row center">
-                    <h5 class="header col s12">At VGReviews we don't make a quick judgement of a game based on a review score. You might be
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card-panel">
+                            <div class="row center">
+                                <h5 class="header col s12">At VGReviews we don't make a quick judgement of a game based on a review score. You might be
                         missing out on a good game.That's why we encourage our writers to be as honest and thurough as possible to bring you
                         the best reviews possible.</h5>
+                            </div>
+                        </div>  
+                    </div>
                 </div>
-            </div>
+            </div>  
             <div class="parallax">
                 <img class="hero-image" src="/static/images/background2.png"
                 alt="Collage of iconic video game characters" loading="lazy">
@@ -108,10 +120,16 @@
     <div class="parallax-container valign-wrapper">
         <div class="section no-pad-bot">
             <div class="container text-shadow">
-                <div class="row center">
-                    <h5 class="header col s12">As gamers like yourself we know review scores for a single game can be found anywhere within
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card-panel">
+                            <div class="row center">
+                                <h5 class="header col s12">As gamers like yourself we know review scores for a single game can be found anywhere within
                         the scale of 1 to 10. Content is king and we feel it's no different with game reviews.The content you read will help
                         you make the best decision.</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="parallax">
