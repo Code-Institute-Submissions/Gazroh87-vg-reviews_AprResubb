@@ -175,6 +175,39 @@ input[type=password]:not(.browser-default) {
     color: #6c757d!important;
 }
 
+.carousel-title {
+    font-weight: 500;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    margin-bottom: 35px;
+}
+
+.carousel-img {
+    opacity: 0.85;
+}
+
+.carousel-img2 {
+    border-radius: 50%;
+}
+
+.carousel .carousel-item > img {
+    height: inherit;
+    object-fit: contain;
+}
+
+.carousel-item p {
+    color: #616161;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    font-size: calc(15px + (25 - 15) * ((100vw - 300px) / (1600 - 300)));
+    font-weight: 500;
+    background-color: transparent;
+    padding: 5px 10px 56px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 footer .list-inline {
     margin: 0;
     padding: 0;
