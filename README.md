@@ -1,43 +1,36 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<div align="center">
+    ![VGReviews Logo](static/images/vgreviews-square-logo.png)
+</div>
 
-Welcome Gary Hughes,
+# [Video Game Reviews](https://vgreviews-project.herokuapp.com/)
 
-## Gitpod Reminders
+## [Code Institute](https://codeinstitute.net/) Milestone Project 3
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### View the live VGReviews Heroku app, click [**>>HERE<<**](https://vgreviews-project.herokuapp.com/)
 
-`python3 -m http.server`
+<img src="static/images/background1.jpg" style="margin: 0;">
 
-A blue button should appear to click: *Make Public*,
+---
 
-Another blue button should appear to click: *Open Browser*.
+## **Summary**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+VGReviews is a video game review website that allows any user to generate game review content and 
+also edit and delete their published reviews.
 
-A blue button should appear to click: *Make Public*,
+### **Introduction**
 
-Another blue button should appear to click: *Open Browser*.
+If your looking for your next game to play or enjoy writing about your gaming journey. This is the 
+app for you. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Users can register an account, browse games and reviews, add your own and edit your 
+content.
 
-## Updates Since The Instructional Video
+At VGReviews we don't make a qucik judgement of a game based on a review score. You might be 
+missing out on a good game. That's why we encourage our writers to be as honest and thorough as
+possible to bring you the best reviews possible.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+As gamers like yourself we know review score for a single game can be found anywhere within the 
+scale of 1 to 10. Content is king and we feel it's no different when it comes to game reviews. 
+The content you read will help you to make the best decisions.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+---
