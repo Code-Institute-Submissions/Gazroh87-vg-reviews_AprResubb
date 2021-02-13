@@ -242,12 +242,12 @@ input[type=password]:not(.browser-default) {
     grid-auto-flow: row;
 }
 
-#game-gallery .card-action {
+.gallery .card-action {
     height: 45px;
     padding: 7px;
 }
 
-#game-gallery .card-title {
+.gallery .card-title {
     font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300))); 
 }
 
@@ -256,8 +256,28 @@ input[type=password]:not(.browser-default) {
     object-fit: cover;
 }
 
+.reviewed-by {
+    margin-left: 30px;
+    font-size: calc(13px + (15 - 13) * ((100vw - 300px) / (1600 - 300)));
+}
+
 .game-data {
     padding: 0 30px;
+}
+
+.review-txt {
+    height: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card .card-content p {
+    margin-top: 15px;
+    margin-left: 30px;
+    height: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 10px;
 }
 
 footer .list-inline {
