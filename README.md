@@ -1,5 +1,5 @@
 <div align="center">
-    ![VGReviews Logo](https://raw.githubusercontent.com/Gazroh87/vg-reviews/master/static/images/vgreviews-square-logo.PNG)
+    ![VGReviews Logo](https://raw.githubusercontent.com/Gazroh87/vg-reviews/master/static/images/vgreviews-square-logo.png)
 </div>
 
 # [Video Game Reviews](https://vgreviews-project.herokuapp.com/)
