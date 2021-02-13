@@ -1,9 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
+    
+    <h3 class="center-align">Game Gallery</h3>
 
-    <h2>I'm extending the base template!</h2>
+    <div id="game-gallery" class="container">
+        <div class="row">
+            {% for game in games %}
+                <div class="col s12 m6 l3 card-grid">
+                    <div class="card" id="{{ game.game_id }}" >
+                        <div class="card-action">
+                            <span class="card-title center-align">{{ game.title }}</span>
+                        </div>
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img src="{{ game.img_url }}">
+                        </div>
+                        <div class="card-content game-data">
+                            <ul class="flow-text"> 
+                                <li>Genre: {{ game.genre }}</li>
+                                <li>Platform: {{ game.developer }}</li>
+                                <li>Developer: {{ game.platform }}</li>
+                                <li>Year Released: {{ game.year }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
 
-    {% for game in games %}
+    <!-- {% for game in games %}
         {{ game.title }}<br>
         {{ game.img_url }}<br>
         {{ game.description}}<br>
@@ -12,6 +38,6 @@
         {{ game.platform }}<br>
         {{ game.year }}<br>
         {{ game.added_by }}<br>
-    {% endfor %}
+    {% endfor %} -->
 
 {% endblock %}
