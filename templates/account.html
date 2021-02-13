@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-
     <div class="row">
         <div class="col s12 m8 offset-m2 l6 offset-l3">
             <div class="card-panel black">
                 <h3 class="center-align white-text">{{ username }}'s Account</h3>
+                <br>
+                <a class="waves-effect waves-grey btn-flat flow-text white overlay-btn show-on-large" href="#">My Reviews</a>
+                <br>
+                <a class="waves-effect waves-grey btn-flat flow-text white overlay-btn show-on-large" href="#">Add Review</a>
+                <br>
+                <a class="waves-effect waves-grey btn-flat flow-text white overlay-btn show-on-large" href="#">Add Game</a>
+                <br>
+                {% if session.user|lower == "admin"|lower %}
+                    <a class="waves-effect waves-grey btn-flat flow-text white overlay-btn show-on-large" href="#">Add Genre</a>
+                    <br>
+                    <a class="waves-effect waves-grey btn-flat flow-text white overlay-btn show-on-large" href="#">Add Platform</a>
+                {% endif %}   
             </div>
         </div>
     </div>
