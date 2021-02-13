@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Gary Hughes" />
+    <title>VGReviews</title>
     <!-- Favicons -->
     <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}" />
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="{{ url_for('static', filename='favicons/apple-touch-icon.png') }}" />
@@ -24,7 +25,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>VGReviews</title>
 </head>
 <body>
     <!-- header containing navigation -->
@@ -32,24 +32,32 @@
         <!-- top navbar -->
         <nav class="nav-extended text-shadow-light black">
         <div class="nav-wrapper">
-        <a href="{{ url_for('home') }}" class="brand-logo">
-            <span >
-                <img class="hide-on-med-only" src="{{ url_for('static', filename='images/vgr-logo.png') }}" alt="Logo of VGR letters inside generic game controller outline">
-                <img class="hide-logo show-on-large" src="{{ url_for('static', filename='images/vgreviews-logo.png') }}" alt="Logo of VGReviews">
-            </span>
-            <img id="tablet-size-logo" class="hide-logo show-on-medium" src="{{ url_for('static', filename='images/vgr-vgreviews-logo.png') }}" alt="Logo of VGR letters inside generic game controller outline next to VGReviews">
-        </a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            {% if session.user %}
-                <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
-            {% else %}
-                <li><a href="{{ url_for('login') }}">Login</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
-            {% endif %}
-        </ul>
+            <a href="{{ url_for('home') }}" class="brand-logo">
+                <span >
+                    <img class="hide-on-med-only" src="{{ url_for('static', filename='images/vgr-logo.png') }}" alt="Logo of VGR letters inside generic game controller outline">
+                    <img class="hide-logo show-on-large" src="{{ url_for('static', filename='images/vgreviews-logo.png') }}" alt="Logo of VGReviews">
+                </span>
+                <img id="tablet-size-logo" class="hide-logo show-on-medium" src="{{ url_for('static', filename='images/vgr-vgreviews-logo.png') }}" alt="Logo of VGR letters inside generic game controller outline next to VGReviews">
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+            <div class="valign-wrapper right hide-on-med-and-down">
+                        <div class="input-field">
+                            <form class="center-align" action="/search" method="POST">
+                                <label for="query"><i class="fas fa-search prefix"></i></label>
+                                <input type="search" name="query" id="query" aria-label="search" pattern="^[a-zA-Z0-9]{1,20}$" class="search-input" required>
+                            </form>
+                        </div>
+                    </div>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                {% if session.user %}
+                    <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% endif %}
+            </ul>
         </div>
         <!-- navbar tabs -->
         <div class="nav-content">
@@ -70,6 +78,14 @@
             <a href="#"><img class="sidenav-logo hide-logo show-on-medium" src="{{ url_for('static', filename='images/vgreviews-square-logo.png') }}" alt="Logo of VGR letters inside generic game controller outline above VGReviews"></a>
             <a href="#" class="sidenav-close"><i class="fas fa-times"></i></a>
         </div>
+        <div class="sidenav-search valign-wrapper">
+                        <div class="input-field">
+                            <form class="center-align" action="/search" method="POST">
+                                <label for="query"><i class="fas fa-search prefix"></i></label>
+                                <input type="search" name="query" id="sidenav-query" aria-label="search" pattern="^[a-zA-Z0-9]{1,20}$" class="search-input" required>
+                            </form>
+                        </div>
+                    </div>
         <ul class>  
             <li><a href="{{ url_for('home') }}">Home</a></li>
             {% if session.user %}
@@ -117,9 +133,9 @@
                 <div class="row">
 				    <div class="col s12">
                         <ul class="social-media-links">
-                            <a href="" class="social-link text-shadow"><i class="fab fa-youtube-square"></i></a>
-                            <a href="" class="social-link text-shadow"><i class="fab fa-twitter-square"></i></a>
-                            <a href="" class="social-link text-shadow"><i class="fab fa-instagram-square"></i></a>
+                            <li><a href="" class="social-link text-shadow"><i class="fab fa-youtube-square"></i></a></li>
+                            <li><a href="" class="social-link text-shadow"><i class="fab fa-twitter-square"></i></a></li>
+                            <li><a href="" class="social-link text-shadow"><i class="fab fa-instagram-square"></i></a></li>
                         </ul>
 				    </div>
                 </div>
