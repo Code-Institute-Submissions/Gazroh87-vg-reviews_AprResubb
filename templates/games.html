@@ -3,10 +3,12 @@
     
     <h3 class="center-align">Game Gallery</h3>
 
-    <div id="game-gallery" class="container">
+    <!-- Game gallery -->
+    <section>
+    <div class="gallery container">
         <div class="row">
             {% for game in games %}
-                <div class="col s12 m6 l3 card-grid">
+                <div class="col s12 m6 l4 card-grid">
                     <div class="card" id="{{ game.game_id }}" >
                         <div class="card-action">
                             <span class="card-title center-align">{{ game.title }}</span>
@@ -27,17 +29,6 @@
             {% endfor %}
         </div>
     </div>
-    
-
-    <!-- {% for game in games %}
-        {{ game.title }}<br>
-        {{ game.img_url }}<br>
-        {{ game.description}}<br>
-        {{ game.genre }}<br>
-        {{ game.developer }}<br>
-        {{ game.platform }}<br>
-        {{ game.year }}<br>
-        {{ game.added_by }}<br>
-    {% endfor %} -->
+</section>
 
 {% endblock %}
