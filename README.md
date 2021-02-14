@@ -286,3 +286,190 @@ As you can see above, the VGReviews database on MongoDB features 5 inter-related
 - [**Grammarly**](https://www.grammarly.com/) - Grammarly is used to reduce grammar errors.
 
 ---
+
+## **Testing**
+
+My process of testing includes:
+
+- Testing my user stories as set out in the UX section.
+- Validating all custom HTML, CSS and JavaScript files.
+- Reviewing website compatibility on different browsers and devices.
+- Reviewing design responsiveness from custom mobile screen sizes of 320 x 480px to desktop 4K resolutions in DevTools.
+- Making sure all links function correctly.
+- Getting my partner to review my website at different developmental stages and the completed product across multiple
+  device sizes for feedback and to point out any obvious bugs or issues with her experience.
+
+A typical instance of testing would involve the following:
+
+- TO BE UPDATED IN FUTURE
+
+My website is to be tested on the latest popular web browsers including:
+
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+- Apple Safari
+- Microsoft Internet Explorer
+- Amazon Silk
+
+I'm using the following physical devices for development and testing:
+
+- AMD Ryzen 7 2700X PC running Windows 10, Chrome, Firefox and Edge browsers on two monitors; 1920x1200px and 2560x1440px natively.
+- Apple iPhone 6S and SE running Safari browser.
+- Laptop running Chrome, Internet Explorer and Edge browsers.
+- Amazon Fire HD tablet running Silk browser.
+
+- TO BE UPDATED IN FUTURE
+
+### **User Story Testing**
+
+- TO BE UPDATED IN FUTURE
+
+### **Bugs Encountered**
+
+- TO BE UPDATED IN FUTURE
+
+---
+
+## **Deployment**
+
+### **Deploying to Heroku **
+
+The project was connected to Heroku using automatic deployment from my GitPod repository, using the following steps...
+
+> **Note:** Before following the below steps ensure you have already created your new repo in Github and set up an env.py file to store your sensitive data. (Further details on adding an env.py file below)
+
+1. In the terminal create requirements.txt and Procfile files by typing the commands below:
+   - $ pip3 freeze --local > requirements.txt
+
+   - $ echo web: python app.py > Procfile
+
+   > **Note:** 
+The **P**rocfile must be assigned a capital P.
+
+2. Add, commit, and push these files to GitHub.
+
+3. Log in (or Register) to [Heroku](https://www.heroku.com/) and from your dashboard click 'new' > 'create new app'.
+
+4. Enter your unique 'App name' and choose your local region, then click 'Create app'.
+   > **Note:** 
+ The app name must all lowercase, and '-' to be used instead of spaces.
+
+5. From the Heroku deploy tab, select the Deployment method 'GitHub'.
+
+6. On the 'Connect to GitHub' section make sure your GitHub profile is displayed then add your repository name and click 'Search'.
+
+   > **Note:** 
+This is the name of your repo in GitHub. It is good practice to use an identical name for your Heroku app.
+
+7. Your repo should now be displayed below, click 'Connect' to connect to this app.
+
+8. Go to the Settings tab on Heroku, scroll to the 'Config Vars' section, and click 'Reveal Config Vars'. 
+
+   Enter variables (key and value) contained in the env.py file. The keys are listed below and values are inputted by the user.
+    - IP = 0.0.0.0
+    - PORT = 5000
+    - SECRET_KEY = [Your chosen Secret Key]
+    - MONGO_URI = mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority
+    - MONGO_DBNAME = [Chosen MongoDB name]
+
+9. Push requirements.txt and Procfile to the repository.
+
+10. Go to the Deploy tab on Heroku and under the Automatic deployment section, click 'Enable Automatic Deploys'. Then under Manual deploy click 'Deploy Branch'.
+
+   - Heroku will now receive the code from GitHub and start building the app using the required packages.
+   - Once built you will receive the message 'Your app was successfully deployed' and you can click 'View' to launch your new app.
+
+        > **Note:** 
+        In Manual deploy dropdown 'master' is selected'
+
+### **Accessing code**
+
+Follow the steps below if you are wanting to propose changes to the project or to use the project as a starting point for your own idea.
+
+- **Forking the GitHub Repository**
+
+  Forking allows you to create a copy of the original repository and propose changes to the repository owner via a pull request.
+
+  1. Log in to GitHub and locate the GitHub Repository.
+
+  2. At the top of the Repository (not top of page) just above the "Settings" button on the menu, locate the "Fork" button.
+
+  3. You should now have a copy of the original repository in your GitHub account.
+
+- **Making a Local Clone**
+
+When you clone a repository, the repository is copied on to your local machine.
+
+1. Log in to GitHub and locate the GitHub Repository.
+   - uReview repository can be found [here](https://github.com/Gazroh87/vg-reviews)
+
+2. Under the repository name, click the "download code" option.   
+
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.   
+
+4. Open Git Bash
+
+5. Change the current working directory to the location where you want the cloned directory to be made.
+
+6. Type git clone, and then paste the URL you copied in Step 3.
+
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/vg-reviews.git
+    ```
+
+7. Press Enter. Your local clone will be created.
+
+      Now, you have a local copy of your fork of the uReview repository.
+
+    > **Note:** The repository name and output numbers that you see on your computer, representing the total file size, etc, may differ from the example I have provided above.
+
+8. Add an env.py file to your workspace to include your environment variables (more details below).
+
+   > **Note:** Contact the site owner if you want more information on the environment variables that have been included.
+
+**Creating env.py file** 
+
+1. Add a env.py file to store environment variables:
+   - Import os 
+   - os.environ.setdefault("IP", "To be added by user") 
+   - os.environ.setdefault("PORT", "To be added by user") 
+   - os.environ.setdefault("SECRET_KEY", "To be added by user") 
+   - os.environ.setdefault("MONGO_URI", "To be added by user") 
+   - os.environ.setdefault("MONGO_DBNAME", "To be added by user")
+
+    > **Note:** I used [RandomKeygen.com](https://randomkeygen.com/) to get my secure SECRET_KEY password. A SECRET_KEY is required when using the flash and session functions of Flask.
+
+ 2. Create a file named .gitignore and include env.py to ensure this file is never pushed to GitHub.
+    > **Note:** The env.py mustn't be tracked as any GitHub user can access your confidential data.
+
+---
+
+## Credits
+
+### Code
+
+- TO BE ADDED IN FUTURE
+
+### Content
+
+- TO BE ADDED IN FUTURE
+
+### Media
+
+- TO BE ADDED IN FUTURE
+
+### Useful information sources
+
+- TO BE ADDED IN FUTURE
+
+### Special thanks / Acknowledgements
+
+- TO BE ADDED IN FUTURE
+
+---
+
+## Disclaimer
+
+This project was created for educational purposes only, for submission to the Code Institute Full Stack Software 
+Development Course for DCD Milestone 3 project grading.
