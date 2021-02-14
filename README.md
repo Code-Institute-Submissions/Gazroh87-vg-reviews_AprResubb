@@ -80,7 +80,7 @@ These are all questions I asked myself throughout the UX design process.
 - As a registered user I want to have my own account page with a range of functionality.
 - As a returning user I want to see content presented/sorted alphabetically or newest first, or even have the option to choose.
 - As an administrator I want to easily moderate user posted reviews and games.
-- As an administrator I want to manage platform and genre categories using CRUD (Create Read Update Delete).
+- As an administrator I want to manage platform and genre categories using 'CRUD' (Create Read Update Delete).
 - As a developer, I want to have options for projects I can continue to build on with updates introducing enhancements and
   additions in aesthetics, gameplay, sound, and so on as I continue to gain experience and expand on my skills.
 
@@ -106,13 +106,49 @@ These are all questions I asked myself throughout the UX design process.
 - 'Press Start 2P' is the font I have chosen to use for headings and is part of the logo.
 - 'Play' is the font I have chosen to use for all other text.
 - These fonts are imported via the head element of an HTML file from Google Fonts.
-- Cursive and sans-serif are the fallback fonts if for some reason the above fonts can't be imported into the site correctly.
-- Like the names suggest, they are both very appropriate to use for a gaming website, are generally very popular in the developer 
-  world and are also very easy to read and attractive.
+- Cursive and sans-serif are the fallback fonts if for some reason the above fonts can't be imported into the site 
+  correctly.
+- Like the names suggest, they are both very appropriate to use for a gaming website, are generally very popular 
+  in the developer world and are also very easy to read and attractive.
 
 #### Icons/Imagery
 
 - Font Awesome was used to import icons into the website.
 - The background images I chose for this website fit the gaming theme perfectly.
-- In conclusion, I feel all the icons and imagery in combination with the colour scheme and typography produce a modern and
-  attractive looking design.
+- In conclusion, I feel all the icons and imagery in combination with the colour scheme and typography produce a 
+  modern and attractive looking design.
+
+### **Strategy**
+
+The focus of this project is on using the knowledge I have learned of Python to build a responsive application, in 
+this case, a game review website to demonstrate to anyone my capabilities in Python alongside HTML5 and CSS3, and 
+jQuery.
+
+### **Scope**
+
+My website's main target users are both casual and passionate gamers. The scope of this app is to provide a place 
+where any gamer, with any platform or console preference can share their honest opinions on the games they have 
+played, or read those other users like themselves have posted.
+
+My app caters to the basic needs of an administrator by including an variety of tools in order to moderate user 
+posted content and provide updates to the website with more gaming platforms, genres or games.
+
+My project provides every user tier 'CRUD' 'CRUD' (Create Read Update Delete) functionality on any of their own 
+data added to the wesbite, with tools to search, sort and make any edits.
+
+I bucket my features into separate lists by priority:
+
+1. 'Will Do' features had to be completed by my given submission deadline for this project. These have one or both of
+   the following characteristics:
+   _ Upper bound: Meet the requirements of a project based on the project specifications.
+   _ Lower bound: Show as much prowess in course material as possible. Show that I can use the different facets of
+   each language (HTML/CSS/JS/Python).
+2. 'Stretch Goals' are features to try to implement if I had time left at the end of the project. These should be
+   relatively quick and easy to implement but only if the above features have been completed.
+3. 'Won't Do' features are features I won't get done before the project deadline but are features I may want to work
+   on in the future and include in future updates.
+
+### **Structure**
+
+I knew I had to limit what functions and mechanics I wanted to include if I was to finish this project by the final
+submission deadline. WEBSITE LAYOUT/PAGE DESCRIPTIONS HERE
