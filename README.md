@@ -210,3 +210,79 @@ As you can see above, the VGReviews database on MongoDB features 5 inter-related
 
 ---
 
+## **Technologies Used**
+
+### **Languages**
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) - Used to build the basic layout of the website.
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - Used for styling and formatting the base HTML code and personalise my website.
+- [JavaScript](https://www.javascript.com/) - Enhances user experience by adding functionality and interactivity to the website.
+- [Python](https://www.python.org/) - Handles data provided by the database.
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - Handles the frontend display of data provided by the backend database in addition to HTML code.
+
+### **Frameworks**
+
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) - A web app framework used to provide libraries and packages 
+  for importing to construct and render page templates.
+
+- [Materialize CSS](https://materializecss.com/) - Materialize CSS was used to assist with some of the structuring, 
+  responsiveness and styling of the website using grid functionality and design templates such as navigation bars, 
+  forms, carousels and parallax.
+
+### **Tools, Libraries, Editors and Version Control**
+
+- [MongoDB](https://en.wikipedia.org/wiki/MongoDB) - MongoDB was used to store the database collections of documents 
+  used in my project.
+
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - Werkzeug is used with Flask to make user authentication 
+  more secure by utilizing various methods of hashing and salting passwords.
+
+- [RandomKeygen](https://randomkeygen.com/) - Random Key Generator provides Fort Knox Passwords for password security.
+
+- [pip](https://pip.pypa.io/en/stable/) - pip is the software package installer/manager for Python.
+
+- [PyMongo](https://pymongo.readthedocs.io/en/stable/) - PyMongo is a Python distribution containing tools for 
+  working with MongoDB, and is the recommended way to work with MongoDB from Python.
+
+- [Google Fonts](https://fonts.google.com/) - Google Fonts were used to embed and link the 'Press Start 2P' and 'play' 
+  fonts into the HTML. It was pointless importing them into the CSS file as the base.html file extends all other HTML 
+  files with the required head tags.
+
+- [Font Awesome](https://fontawesome.com/) - Font Awesome was used to provide the icons throughout the website for 
+  aesthetic and UX design purposes. Icons give the user additional context from the first glance.
+
+- [jQuery 3.5.1](https://jquery.com/) - jQuery comes as part of Materialize to make responsive components and is 
+  included at the end of the body tags within the base.html file to ensure the correct running of HTML and CSS.
+
+- [Git](https://git-scm.com/) / [Gitpod](https://www.gitpod.io/) - Git was used for version control by utilizing 
+  the Gitpod IDE terminal to commit files to Git and push them to GitHub. Gitpod was the primary development tool 
+  for the building and maintenance of the website.
+
+- [GitHub](https://github.com/) - GitHub is used to store the project's code within a repository including all 
+  previous versions or commits of the project after being pushed from Gitpod and can be used to host the deployed 
+  website for public viewing.
+
+- [Heroku](https://en.wikipedia.org/wiki/Heroku) - Heroku is the app platform this project is deployed to for public 
+  viewing.
+
+- [Lucidchart](https://lucidchart.com/) - Lucidchart was used to create the database schema for MongoDB.
+
+- [Coolors](https://coolors.co/) - Coolors was used to quickly get 'in-between' colours and relative hex codes.
+
+- [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html) - Adobe Illustrator was used for testing 
+  colour and shading compatibility with my chosen colour scheme and tweaking if desired. It is also used for 
+  cropping and scaling images.
+
+- [Balsamiq Wireframes](https://balsamiq.com/wireframes/) - I'm using the Balsamiq Wireframes desktop application to 
+  create all my [wireframes]() during the design process.
+
+- [tiny jpg](https://tinyjpg.com/) & [tiny png](https://tinypng.com/) - These websites were used to compress the 
+  images used throughout the website to reduce data size, decreasing load times without sacrificing the integrity 
+  or quality of the original images.
+
+- [Favicon Converter](https://favicon.io/favicon-converter/) - This Favicon converter was used to create the favicon 
+  based on my brand logo, to be displayed on the browser tab and bookmarks bar.
+
+- [**Grammarly**](https://www.grammarly.com/) - Grammarly is used to reduce grammar errors.
+
+---
