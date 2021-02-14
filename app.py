@@ -20,9 +20,15 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    # genres = mongo.db.genres.find()
-    # return "Flask is working" + str(mongo.db.genres.find_one())
-    return render_template("home.html")
+    platforms = list(mongo.db.platforms.find().sort("platform", 1))
+    return render_template("home.html", platforms=platforms)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    return render_template("reviews.html", reviews=reviews)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -100,9 +106,65 @@ def logout():
 
 @app.route("/get_reviews")
 def get_reviews():
-    reviews = mongo.db.reviews.find()
+    reviews = mongo.db.reviews.find().sort("_id", -1)
     return render_template("reviews.html", reviews=reviews)
 
+
+@app.route("/add_review", methods=["GET", "POST"])
+def add_review():
+    if request.method == "POST":
+        review = {
+            "title": request.form.get("title"),
+            "platform": request.form.get("platform"),
+            "review": request.form.get("review"),
+            "completed": request.form.get("completed"),
+            "reviewed_by": session["user"]
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Review Added Successfully!")
+        return redirect(url_for("my_reviews"))
+
+    genres = mongo.db.genres.find().sort("genre", 1)
+    platforms = mongo.db.platforms.find().sort("platform", 1)
+    return render_template(
+        "add_review.html", genres=genres, platforms=platforms)
+
+
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    if request.method == "POST":
+        submit = {
+            "title": request.form.get("title"),
+            "platform": request.form.get("platform"),
+            "review": request.form.get("review"),
+            "completed": request.form.get("completed"),
+            "reviewed_by": session["user"]
+        }
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+        flash("Review Changes Saved!")
+        return redirect(url_for("my_reviews"))
+
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    genres = mongo.db.genres.find().sort("genre", 1)
+    platforms = mongo.db.platforms.find().sort("platform", 1)
+    return render_template("edit_review.html",
+                           review=review,
+                           genres=genres,
+                           platforms=platforms)
+
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Review Deleted Successfully")
+    return redirect(url_for("get_reviews"))
+
+
+@app.route("/my_reviews")
+def my_reviews():
+    reviews = list(mongo.db.reviews.find(
+        {"created_by": session["user"]}).sort("_id", -1))
+    return render_template("my_reviews.html", reviews=reviews)
 
 @app.route("/get_games")
 def get_games():
