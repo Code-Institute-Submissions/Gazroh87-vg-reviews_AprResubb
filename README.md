@@ -84,3 +84,35 @@ These are all questions I asked myself throughout the UX design process.
 - As a developer, I want to have options for projects I can continue to build on with updates introducing enhancements and
   additions in aesthetics, gameplay, sound, and so on as I continue to gain experience and expand on my skills.
 
+### **Design Choices**
+
+#### Colour Scheme
+
+![#000000](https://via.placeholder.com/15/000000/000000?text=+) `#000000`
+![#1d800a](https://via.placeholder.com/15/1d800a/000000?text=+) `#1d800a`
+![#39ff14](https://via.placeholder.com/15/39ff14/000000?text=+) `#39ff14`
+![#9cff8a](https://via.placeholder.com/15/9cff8a/000000?text=+) `#9cff8a`
+![#ffffff](https://via.placeholder.com/15/ffffff/000000?text=+) `#ffffff`
+![#404040](https://via.placeholder.com/15/404040/000000?text=+) `#404040`
+![#808080](https://via.placeholder.com/15/808080/000000?text=+) `#808080`
+![#c0c0c0](https://via.placeholder.com/15/c0c0c0/000000?text=+) `#c0c0c0`
+
+- Black and white are the dominant/primary colours throughout the website, mainly for nav bars, backgrounds and text. 
+- Shades of green are the contrasting accent colours, used in the logo, some headings, icons, borders and buttons.
+- The last colours are the contrasting neutrals to use where necessary.
+
+#### Typography
+
+- 'Press Start 2P' is the font I have chosen to use for headings and is part of the logo.
+- 'Play' is the font I have chosen to use for all other text.
+- These fonts are imported via the head element of an HTML file from Google Fonts.
+- Cursive and sans-serif are the fallback fonts if for some reason the above fonts can't be imported into the site correctly.
+- Like the names suggest, they are both very appropriate to use for a gaming website, are generally very popular in the developer 
+  world and are also very easy to read and attractive.
+
+#### Icons/Imagery
+
+- Font Awesome was used to import icons into the website.
+- The background images I chose for this website fit the gaming theme perfectly.
+- In conclusion, I feel all the icons and imagery in combination with the colour scheme and typography produce a modern and
+  attractive looking design.
