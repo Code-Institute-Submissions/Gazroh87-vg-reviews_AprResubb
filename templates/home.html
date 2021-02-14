@@ -105,7 +105,7 @@
                 <h4 class="center-align carousel-title text-shadow">Find Reviews by Platform</h4>
                 <div class="carousel">
                     {% for platform in platforms %}
-                    <a class="carousel-item" href="{{ url_for('get_platform', platform=platform.platform) }}">
+                    <a class="carousel-item" href="{{ url_for('get_platforms', platform=platform.platform) }}">
                     <img
                         class="carousel-img2" loading="lazy"
                         src="{{ platform.img_url}}"
