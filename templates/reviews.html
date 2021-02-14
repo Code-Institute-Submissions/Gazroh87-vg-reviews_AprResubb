@@ -4,7 +4,7 @@
     <h3 class="center-align">Reviews</h3>
 
     <!-- Review gallery -->
-    {% if reviews|length > 0 %}
+    {% if reviews.count() > 0 %}
     <section>
     <div class="gallery container">
         <div class="row">
@@ -24,9 +24,9 @@
                         <div class="card-content flow-text">
                             <p class="review-txt">{{ review.review }}</p>
                         </div>
-                        <span class="reviewed-by left">by <strong>{{ review.created_by }}</strong></span>
+                        <span class="reviewed-by left">by <strong>{{ review.reviewed_by }}</strong></span>
                          <div class="card-action">
-                        {% if review.created_by|lower == session.user|lower %}
+                        {% if review.reviewed_by|lower == session.user|lower %}
                         <a href="{{ url_for('edit_review', review_id=review._id) }}"
                             class="btn-small text-shadow left edit-btn">Edit Review <i
                                 class="fas fa-edit"></i></a>
