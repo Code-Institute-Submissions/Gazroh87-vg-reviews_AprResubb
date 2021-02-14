@@ -3,5 +3,7 @@ $(document).ready(function(){
      $(':header').css("font-family","'Press Start 2P'", "cursive")
      $('.parallax').parallax();
      $('.carousel').carousel();
+     $('select').formSelect();
+     $(".datepicker").datepicker();
      $("#copyright").text(new Date().getFullYear());
   });
