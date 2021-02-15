@@ -13,21 +13,21 @@
 ## **Summary**
 
 VGReviews is a video game review website that allows any user to generate game review content and 
-also edit and delete their published reviews.
+also, edit and delete their published reviews.
 
 ### **Introduction**
 
-If your looking for your next game to play or enjoy writing about your gaming journey. This is the 
+If your're looking for your next game to play or enjoy writing about your gaming journey. This is the 
 app for you. 
 
 Users can register an account, browse games and reviews, add your own and edit your 
 content.
 
-At VGReviews we don't make a qucik judgement of a game based on a review score. You might be 
+At VGReviews we don't make a quick judgement of a game based on a review score. You might be 
 missing out on a good game. That's why we encourage our writers to be as honest and thorough as
 possible to bring you the best reviews possible.
 
-As gamers like yourself we know review score for a single game can be found anywhere within the 
+As gamers like yourself, we know review scores for a single game can be found anywhere within the 
 scale of 1 to 10. Content is king and we feel it's no different when it comes to game reviews. 
 The content you read will help you to make the best decisions.
 
@@ -62,7 +62,7 @@ These are all questions I asked myself throughout the UX design process.
 
 ### **User Stories**
 
-- As a new visitor to this website I want to experience easy navigation around the site and find reviews quickly from the homepage.
+- As a new visitor to this website, I want to experience easy navigation around the site and find reviews quickly from the homepage.
 - As a new visitor, I would like to Quickly recognize any interactive elements and build an understanding of how one thing
   leads to another so the website flows well.
 - As a new visitor I want to find where I can easily register an account.
@@ -79,8 +79,8 @@ These are all questions I asked myself throughout the UX design process.
 - As a registered user I want to see a gallery of all the reviews I have posted in one place.
 - As a registered user I want to have my own account page with a range of functionality.
 - As a returning user I want to see content presented/sorted alphabetically or newest first, or even have the option to choose.
-- As an administrator I want to easily moderate user posted reviews and games.
-- As an administrator I want to manage platform and genre categories using 'CRUD' (Create Read Update Delete).
+- As an administrator, I want to easily moderate user-posted reviews and games.
+- As an administrator, I want to manage platform and genre categories using 'CRUD' (Create Read Update Delete).
 - As a developer, I want to have options for projects I can continue to build on with updates introducing enhancements and
   additions in aesthetics, gameplay, sound, and so on as I continue to gain experience and expand on my skills.
 
@@ -108,7 +108,7 @@ These are all questions I asked myself throughout the UX design process.
 - These fonts are imported via the head element of an HTML file from Google Fonts.
 - Cursive and sans-serif are the fallback fonts if for some reason the above fonts can't be imported into the site 
   correctly.
-- Like the names suggest, they are both very appropriate to use for a gaming website, are generally very popular 
+- As the font names suggest, they are both very appropriate to use for a gaming website, are generally very popular 
   in the developer world and are also very easy to read and attractive.
 
 #### Icons/Imagery
@@ -127,14 +127,14 @@ jQuery.
 ### **Scope**
 
 My website's main target users are both casual and passionate gamers. The scope of this app is to provide a place 
-where any gamer, with any platform or console preference can share their honest opinions on the games they have 
-played, or read those other users like themselves have posted.
+where any gamer, with any platform or console preference, can share their honest opinions on the games they have 
+played, or read those other users as themselves have posted.
 
-My app caters to the basic needs of an administrator by including an variety of tools in order to moderate user 
+My app caters to the basic needs of an administrator by including a variety of tools in order to moderate user 
 posted content and provide updates to the website with more gaming platforms, genres or games.
 
 My project provides every user tier 'CRUD' 'CRUD' (Create Read Update Delete) functionality on any of their own 
-data added to the wesbite, with tools to search, sort and make any edits.
+data added to the website, with tools to search, sort and make any edits.
 
 I bucket my features into separate lists by priority:
 
@@ -170,7 +170,12 @@ as an original concept design to get the layout of each part or a particular fea
 
 ### **Current Features**
 
-- TO BE ADDED IN FUTURE
+- Responsiveness across all device and screen sizes using the Materialize Grid system and CSS media queries makes 
+  the website easily accessible and simple to navigate.
+- A user-friendly interface.
+- Attractive, minimalistic design with visuals and information presented clearly and concisely.
+
+- TO BE UPDATED IN FUTURE
 
 ### **Future features/improvements to be implemented**
 
@@ -202,7 +207,7 @@ As you can see above, the VGReviews database on MongoDB features 5 inter-related
       (game developer name), "platform", "year" (year of game release on platform), and "added_by" (added by user) 
       all with string values.
 
-    * The reviews collection - contains the keys "title" (game name), "platform", "review" (user generated review 
+    * The reviews collection - contains the keys "title" (game name), "platform", "review" (user-generated review 
       text), and "completed" (Does the user feel they have completed the game?) all with string values.
 
     * The users collection - contains the key "username" with a string value and the key "password" with a string 
@@ -225,7 +230,7 @@ As you can see above, the VGReviews database on MongoDB features 5 inter-related
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/) - A web app framework used to provide libraries and packages 
   for importing to construct and render page templates.
 
-- [Materialize CSS](https://materializecss.com/) - Materialize CSS was used to assist with some of the structuring, 
+- [Materialize CSS](https://materializecss.com/) - Materialize CSS was used to assist with some of the structurings, 
   responsiveness and styling of the website using grid functionality and design templates such as navigation bars, 
   forms, carousels and parallax.
 
@@ -265,7 +270,7 @@ As you can see above, the VGReviews database on MongoDB features 5 inter-related
 - [Heroku](https://en.wikipedia.org/wiki/Heroku) - Heroku is the app platform this project is deployed to for public 
   viewing.
 
-- [Lucidchart](https://lucidchart.com/) - Lucidchart was used to create the database schema for MongoDB.
+- [Lucidchart](https://lucidchart.com/) - I used Lucidchart to create the database schema for MongoDB.
 
 - [Coolors](https://coolors.co/) - Coolors was used to quickly get 'in-between' colours and relative hex codes.
 
@@ -283,7 +288,15 @@ As you can see above, the VGReviews database on MongoDB features 5 inter-related
 - [Favicon Converter](https://favicon.io/favicon-converter/) - This Favicon converter was used to create the favicon 
   based on my brand logo, to be displayed on the browser tab and bookmarks bar.
 
-- [**Grammarly**](https://www.grammarly.com/) - Grammarly is used to reduce grammar errors.
+- [Grammarly](https://www.grammarly.com/) - Grammarly is used to reduce grammar errors.
+
+- [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) -
+
+- [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/?utm_source=devtools) -
+
+- [Autoprefixer CSS](https://autoprefixer.github.io/) -
+
+- [Am I Responsive Design?](http://ami.responsivedesign.is/) -
 
 ---
 
@@ -321,6 +334,11 @@ I'm using the following physical devices for development and testing:
 
 - TO BE UPDATED IN FUTURE
 
+The following validators were used to validate all of the HTML, CSS and JavaScript files that make up this project, to
+ensure there are no syntax errors in the project code.
+
+- TO BE UPDATED IN FUTURE
+
 ### **User Story Testing**
 
 - TO BE UPDATED IN FUTURE
@@ -345,7 +363,7 @@ The project was connected to Heroku using automatic deployment from my GitPod re
    - $ echo web: python app.py > Procfile
 
    > **Note:** 
-The **P**rocfile must be assigned a capital P.
+The Procfile must be assigned a capital P.
 
 2. Add, commit, and push these files to GitHub.
 
@@ -402,7 +420,7 @@ Follow the steps below if you are wanting to propose changes to the project or t
 When you clone a repository, the repository is copied on to your local machine.
 
 1. Log in to GitHub and locate the GitHub Repository.
-   - uReview repository can be found [here](https://github.com/Gazroh87/vg-reviews)
+   - VGReviews repository can be found [here](https://github.com/Gazroh87/vg-reviews)
 
 2. Under the repository name, click the "download code" option.   
 
@@ -420,7 +438,7 @@ When you clone a repository, the repository is copied on to your local machine.
 
 7. Press Enter. Your local clone will be created.
 
-      Now, you have a local copy of your fork of the uReview repository.
+      Now, you have a local copy of your fork of the VGReviews repository.
 
     > **Note:** The repository name and output numbers that you see on your computer, representing the total file size, etc, may differ from the example I have provided above.
 
@@ -461,7 +479,9 @@ When you clone a repository, the repository is copied on to your local machine.
 
 ### Useful information sources
 
-- TO BE ADDED IN FUTURE
+- HTML/CSS/JavaScript - [w3schools](https://www.w3schools.com/)
+- CSS - [CSS-Tricks](https://css-tricks.com/)
+- JavaScript - [Developer Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ### Special thanks / Acknowledgements
 
