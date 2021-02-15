@@ -166,6 +166,7 @@ def my_reviews():
         {"created_by": session["user"]}).sort("_id", -1))
     return render_template("my_reviews.html", reviews=reviews)
 
+
 @app.route("/get_games")
 def get_games():
     games = list(mongo.db.games.find().sort("title", 1))
