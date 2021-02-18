@@ -122,7 +122,7 @@ def add_review():
         }
         mongo.db.reviews.insert_one(review)
         flash("Review Added Successfully!")
-        return redirect(url_for("add_review"))
+        return redirect(url_for("get_reviews"))
 
     games = mongo.db.games.find().sort("title", 1)
     platforms = mongo.db.platforms.find().sort("platform", 1)
@@ -145,11 +145,11 @@ def edit_review(review_id):
         return redirect(url_for("my_reviews"))
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
-    genres = mongo.db.genres.find().sort("genre", 1)
+    games = mongo.db.games.find().sort("title", 1)
     platforms = mongo.db.platforms.find().sort("platform", 1)
     return render_template("edit_review.html",
                            review=review,
-                           genres=genres,
+                           games=games,
                            platforms=platforms)
 
 
