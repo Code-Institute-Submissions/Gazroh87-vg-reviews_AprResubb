@@ -44,6 +44,10 @@
                         </div>
                         <div class="col s9">
                             <span class="card-title center-align">{{ review.title }}</span>
+                            {% if review.completed == "on" %}
+                                <i class="fas fa-clipboard-check yellow-text text-lighten-2 tooltipped" data-position="right"
+                                data-tooltip="Game Completed"></i>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="collapsible-body">

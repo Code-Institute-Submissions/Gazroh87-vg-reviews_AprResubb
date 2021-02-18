@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('.parallax').parallax();
     $('.carousel').carousel();
     $('.collapsible.expandable').collapsible({ accordion: false });
+    $('.tooltipped').tooltip();
     $('select').formSelect();
     $(".datepicker").datepicker();
     $("#copyright").text(new Date().getFullYear());
