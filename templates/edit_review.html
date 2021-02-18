@@ -10,12 +10,16 @@
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix"></i>
                 <select id="title" name="title" class="validate" required>
-                    <option value="" disabled selected>Choose Game</option>
+                    <option value="" disabled>Choose Game</option>
                     {% for game in games %}
-                        <option value="{{ game.title }}">{{ game.title }}</option>
+                        {% if game.title == review.title %}
+                            <option value="{{ game.title }}" selected>{{ game.title }}</option>
+                        {% else %}
+                            <option value="{{ game.title }}">{{ game.title }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
-                <label for="">Game</label>
+                <label for="title">Game</label>
             </div>
         </div>
         <!-- platform selection -->
@@ -23,12 +27,16 @@
             <div class="input-field col s12">
                 <i class="fas fa-gamepad prefix"></i>
                 <select id="platform" name="platform" class="validate" required>
-                    <option value="" disabled selected>Choose Platform</option>
+                    <option value="" disabled>Choose Platform</option>
                     {% for platform in platforms %}
-                        <option value="{{ platform.platform }}">{{ platform.platform }}</option>
+                        {% if platform.platform == review.platform %}
+                            <option value="{{ platform.platform }}" selected>{{ platform.platform }}</option>
+                        {% else %}
+                            <option value="{{ platform.platform }}">{{ platform.platform }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
-                <label>Select Platform</label>
+                <label for="platform">Select Platform</label>
             </div>
         </div>
         <!-- review -->
@@ -36,7 +44,9 @@
             <div class="input-field col s12">
                 <i class="fas fa-pen-square prefix"></i>
                 <textarea id="review" name="review" minlength="200" maxlength="2500"
-                    class="materialize-textarea validate" required></textarea>
+                    class="materialize-textarea validate" required>
+                {{- review.review -}}
+                </textarea>
                 <label for="review">Review
                     <i class="fas fa-info-circle tooltipped"
                         data-position="top"
@@ -51,7 +61,11 @@
                 <div class="switch">
                     <i class="fas fa-clipboard-check prefix green-text text-darken-4"></i>
                     <label for="completed">
+                        {% if review.completed == "on" %}
+                        <input type="checkbox" id="completed" name="completed" checked>
+                        {% else %}
                         <input type="checkbox" id="completed" name="completed">
+                        {% endif %}
                         <span class="lever"></span>
                         Completed
                     </label>
