@@ -122,12 +122,12 @@ def add_review():
         }
         mongo.db.reviews.insert_one(review)
         flash("Review Added Successfully!")
-        return redirect(url_for("my_reviews"))
+        return redirect(url_for("add_review"))
 
-    genres = mongo.db.genres.find().sort("genre", 1)
+    games = mongo.db.games.find().sort("title", 1)
     platforms = mongo.db.platforms.find().sort("platform", 1)
     return render_template(
-        "add_review.html", genres=genres, platforms=platforms)
+        "add_review.html", games=games, platforms=platforms)
 
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])

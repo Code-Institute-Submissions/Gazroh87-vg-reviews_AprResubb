@@ -1,6 +1,74 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add Review</h3>
+    <h3 class="center-align text-shadow">Add Review</h3>
+
+    <div class="row card-panel">
+    <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
+        <!-- game selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix"></i>
+                <select id="title" name="title" class="validate" required>
+                    <option value="" disabled selected>Choose Game</option>
+                    {% for game in games %}
+                        <option value="{{ game.title }}">{{ game.title }}</option>
+                    {% endfor %}
+                </select>
+                <label for="">Game</label>
+            </div>
+        </div>
+        <!-- platform selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-gamepad prefix"></i>
+                <select id="platform" name="platform" class="validate" required>
+                    <option value="" disabled selected>Choose Platform</option>
+                    {% for platform in platforms %}
+                        <option value="{{ platform.platform }}">{{ platform.platform }}</option>
+                    {% endfor %}
+                </select>
+                <label>Select Platform</label>
+            </div>
+        </div>
+        <!-- review -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pen-square prefix"></i>
+                <textarea id="review" name="review" minlength="200" maxlength="2500"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="review">Review
+                    <i class="fas fa-info-circle tooltipped"
+                        data-position="top"
+                        data-tooltip="Minimum 200 characters">
+                    </i>
+                </label>
+            </div>
+        </div>
+        <!-- is completed toggle -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <i class="fas fa-clipboard-check prefix green-text text-darken-4"></i>
+                    <label for="completed">
+                        <input type="checkbox" id="completed" name="completed">
+                        <span class="lever"></span>
+                        Completed
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large text-shadow">
+                    Add Review <i class="fas fa-plus-square right"></i>
+                </button>
+                 <a class="waves-effect waves-grey btn"
+                    href="{{ url_for('get_reviews') }}">Cancel <i class="fas fa-times"></i></a>
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
