@@ -6,6 +6,7 @@ $(document).ready(function () {
     $('.collapsible.expandable').collapsible({ accordion: false });
     $('.tooltipped').tooltip();
     $('select').formSelect();
+    $('.modal').modal();
     $(".datepicker").datepicker();
     $("#copyright").text(new Date().getFullYear());
 
