@@ -173,6 +173,37 @@ def get_games():
     return render_template("games.html", games=games)
 
 
+@app.route("/add_game", methods=["GET", "POST"])
+def add_game():
+    if request.method == "POST":
+        game = {
+            "title": request.form.get("title")
+        }
+        mongo.db.games.insert_one(game)
+        flash("Game Added Successfully!")
+        return redirect(url_for("get_games"))
+
+    return render_template("add_game.html")
+
+
+@app.route("/edit_game/<game_id>", methods=["GET", "POST"])
+def edit_game(game_id):
+    if request.method == "POST":
+        submit = {
+            "title": request.form.get("title")
+        }
+        mongo.db.games.update({"_id": ObjectId(game_id)}, submit)
+        flash("Game Changes Saved!")
+        return redirect(url_for("get_games"))
+
+
+@app.route("/delete_game/<game_id>")
+def delete_game(game_id):
+    mongo.db.geames.remove({"_id": ObjectId(game_id)})
+    flash("Game Deleted Successfully")
+    return redirect(url_for("get_games"))
+
+
 @app.route("/get_genres")
 def get_genres():
     genres = list(mongo.db.genres.find().sort("genre", 1))
