@@ -43,8 +43,11 @@
             <div class="valign-wrapper right hide-on-med-and-down">
                         <div class="input-field">
                             <form class="center-align" action="/search" method="POST">
-                                <label for="query"><i class="fas fa-search prefix"></i></label>
-                                <input type="search" name="query" id="query" aria-label="search" pattern="^[a-zA-Z0-9]{1,20}$" class="search-input" required>
+                                <div class="input-field col s12 m8">
+                                    <i class="fas fa-search prefix"></i>
+                                    <input type="text" name="query" id="query" class="validate" required>
+                                    <label for="query">Search Reviews</label>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -71,7 +74,6 @@
                 <li class="tab"><a href="{{ url_for('get_games') }}">Game Gallery</a></li>
                 <li class="tab"><a href="{{ url_for('get_genres') }}">All Genres</a></li>
                 <li class="tab"><a href="{{ url_for('get_platforms') }}">All Platforms</a></li>
-                <li class="tab disabled"><a href="#">Disabled Tab</a></li>
             {% endif %}
         </ul>
         </div>

@@ -106,7 +106,7 @@ def logout():
 
 @app.route("/get_reviews")
 def get_reviews():
-    reviews = mongo.db.reviews.find().sort("_id", -1)
+    reviews = list(mongo.db.reviews.find().sort("_id", -1))
     return render_template("reviews.html", reviews=reviews)
 
 
@@ -177,7 +177,14 @@ def get_games():
 def add_game():
     if request.method == "POST":
         game = {
-            "title": request.form.get("title")
+            "title": request.form.get("title"),
+            "img_url": request.form.get("img_url"),
+            "description": request.form("description"),
+            "genre": request.form("genre"),
+            "developer": request.form("developer"),
+            "platform": request.form("platform"),
+            "year": request.form("year"),
+            "added_by": session["user"]
         }
         mongo.db.games.insert_one(game)
         flash("Game Added Successfully!")
@@ -190,7 +197,14 @@ def add_game():
 def edit_game(game_id):
     if request.method == "POST":
         submit = {
-            "title": request.form.get("title")
+            "title": request.form.get("title"),
+            "img_url": request.form.get("img_url"),
+            "description": request.form("description"),
+            "genre": request.form("genre"),
+            "developer": request.form("developer"),
+            "platform": request.form("platform"),
+            "year": request.form("year"),
+            "added_by": session["user"]
         }
         mongo.db.games.update({"_id": ObjectId(game_id)}, submit)
         flash("Game Changes Saved!")
@@ -202,6 +216,12 @@ def delete_game(game_id):
     mongo.db.geames.remove({"_id": ObjectId(game_id)})
     flash("Game Deleted Successfully")
     return redirect(url_for("get_games"))
+
+
+@app.route("/find_game/<title>", methods=["GET", "POST"])
+def find_game(title):
+    reviews = list(mongo.db.reviews.find({"title": title}))
+    return render_template("reviews.html", reviews=reviews)
 
 
 @app.route("/get_genres")
@@ -218,6 +238,7 @@ def edit_genre(genre_id):
         }
         mongo.db.genres.update({"_id": ObjectId(genre_id)}, submit)
         flash("Genre Changes Successfuly!")
+        return redirect(url_for("get_genres"))
 
 
 @app.route("/delete_genre/<genre_id>")
