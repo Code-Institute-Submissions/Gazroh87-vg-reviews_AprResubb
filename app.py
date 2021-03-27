@@ -210,6 +210,23 @@ def get_genres():
     return render_template("genres.html", genres=genres)
 
 
+@app.route("/edit_genre/<genre_id>", methods=["GET", "POST"])
+def edit_genre(genre_id):
+    if request.method == "POST":
+        submit = {
+            "genre": request.form.get("genre")
+        }
+        mongo.db.genres.update({"_id": ObjectId(genre_id)}, submit)
+        flash("Genre Changes Successfuly!")
+
+
+@app.route("/delete_genre/<genre_id>")
+def delete_genre(genre_id):
+    mongo.db.genres.remove({"_id": ObjectId(genre_id)})
+    flash("Genre Deleted Successfully")
+    return redirect(url_for("get_genres"))
+
+
 @app.route("/get_platforms")
 def get_platforms():
     platforms = list(mongo.db.platforms.find().sort("platform", 1))
