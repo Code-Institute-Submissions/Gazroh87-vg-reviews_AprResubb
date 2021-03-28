@@ -19,7 +19,7 @@
                     href="{{ url_for('get_reviews') }}">Reviews</a>
                                     {% if session.user %}
                                         <a class="waves-effect waves-light btn-large flow-text" 
-                        href="#">Add Review</a>
+                        href="{{ url_for('add_review') }}">Add Review</a>
                                     {% else %}
                                         <a class="waves-effect waves-light btn-large flow-text"
                         href="{{ url_for('register') }}">Register</a>
