@@ -2,12 +2,19 @@
 {% block content %}
     
 {% if session.user|lower == "admin2"|lower %}
-    <h3 class="center-align text-shadow">Manage Genres</h3>
+    <div class="row">
+        <div class="col offset-m3 offset-l4 center-align genre-container">
+            <h3 class="center-align text-shadow">Manage Genres</h3>
+            <a class="waves-effect btn" href="{{ url_for('add_genre') }}">
+                Add Genre <i class="fas fa-plus"></i>
+            </a>
+        </div>   
+    </div>
 {% else %}
     <h3 class="center-align text-shadow">Genres</h3>
 {% endif %}
 
-    <!-- Game gallery -->
+    <!-- Genre gallery -->
     <section>
         <div class="gallery container">
             <div class="row">
@@ -27,7 +34,7 @@
                             </div>
                         </div>
                     </div>
-                    <!--Delete Game Modal-->
+                    <!--Delete Genre Modal-->
                     <div id="{{ genre._id }}" class="modal center-align">
                         <div class="modal-content">
                             <div class="row">
