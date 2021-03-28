@@ -24,11 +24,18 @@ def home():
     return render_template("home.html", platforms=platforms)
 
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
+@app.route("/search_reviews", methods=["GET", "POST"])
+def search_reviews():
     query = request.form.get("query")
     reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
     return render_template("reviews.html", reviews=reviews)
+
+
+@app.route("/search_games", methods=["GET", "POST"])
+def search_games():
+    query = request.form.get("query-games")
+    games = list(mongo.db.games.find({"$text": {"$search": query}}))
+    return render_template("games.html", games=games)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -179,18 +186,20 @@ def add_game():
         game = {
             "title": request.form.get("title"),
             "img_url": request.form.get("img_url"),
-            "description": request.form("description"),
-            "genre": request.form("genre"),
-            "developer": request.form("developer"),
-            "platform": request.form("platform"),
-            "year": request.form("year"),
+            "description": request.form.get("description"),
+            "genre": request.form.get("genre"),
+            "developer": request.form.get("developer"),
+            "platform": request.form.get("platform"),
+            "year": request.form.get("year"),
             "added_by": session["user"]
         }
         mongo.db.games.insert_one(game)
         flash("Game Added Successfully!")
         return redirect(url_for("get_games"))
 
-    return render_template("add_game.html")
+    genres = mongo.db.genres.find().sort("genre", 1)
+    platforms = mongo.db.platforms.find().sort("platform", 1)
+    return render_template("add_game.html", genres=genres, platforms=platforms)
 
 
 @app.route("/edit_game/<game_id>", methods=["GET", "POST"])
@@ -199,12 +208,12 @@ def edit_game(game_id):
         submit = {
             "title": request.form.get("title"),
             "img_url": request.form.get("img_url"),
-            "description": request.form("description"),
-            "genre": request.form("genre"),
-            "developer": request.form("developer"),
-            "platform": request.form("platform"),
-            "year": request.form("year"),
-            "added_by": session["user"]
+            "description": request.form.get("description"),
+            "genre": request.form.get("genre"),
+            "developer": request.form.get("developer"),
+            "platform": request.form.get("platform"),
+            "year": request.form.get("year"),
+            "added_by": session.get["user"]
         }
         mongo.db.games.update({"_id": ObjectId(game_id)}, submit)
         flash("Game Changes Saved!")
@@ -228,6 +237,19 @@ def find_game(title):
 def get_genres():
     genres = list(mongo.db.genres.find().sort("genre", 1))
     return render_template("genres.html", genres=genres)
+
+
+@app.route("/add_genre", methods=["GET", "POST"])
+def add_genre():
+    if request.method == "POST":
+        genre = {
+            "genre": request.form.get("genre")
+        }
+        mongo.db.games.insert_one(genre)
+        flash("Genre Added Successfully!")
+        return redirect(url_for("get_genres"))
+
+    return render_template("add_genre.html")
 
 
 @app.route("/edit_genre/<genre_id>", methods=["GET", "POST"])
