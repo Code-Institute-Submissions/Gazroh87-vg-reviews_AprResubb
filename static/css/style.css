@@ -152,6 +152,10 @@ nav .input-field label i {
 
 /* Call Buttons and Icons */
 
+.btn-large {
+    margin: 10px;
+}
+
 .call-btns {
     display: flex;
     justify-content: space-around;
@@ -187,6 +191,10 @@ button > .btn-large {
 .btn-large span,
 .btn-large i {
     vertical-align: middle;
+}
+
+.btn-small {
+    margin: 5px;
 }
 
 /*-- Inputs */
@@ -261,12 +269,16 @@ input[type=password]:not(.browser-default) {
 }
 
 .gallery .card-action {
-    height: 45px;
     padding: 7px;
 }
 
 .gallery .card-title {
     font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300))); 
+}
+
+.collapsible-header .col strong {
+    margin: 5px;
+    line-height: 42px;    
 }
 
 .card-image img {
@@ -277,10 +289,6 @@ input[type=password]:not(.browser-default) {
 .reviewed-by {
     margin-left: 30px;
     font-size: calc(13px + (15 - 13) * ((100vw - 300px) / (1600 - 300)));
-}
-
-.game-data {
-    padding: 0 30px;
 }
 
 .review-txt {

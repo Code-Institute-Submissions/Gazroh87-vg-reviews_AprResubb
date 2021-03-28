@@ -25,7 +25,7 @@
         <!-- platform selection -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-gamepad prefix"></i>
+                <i class="fas fa-tv prefix"></i>
                 <select id="platform" name="platform" class="validate" required>
                     <option value="" disabled>Choose Platform</option>
                     {% for platform in platforms %}
@@ -98,7 +98,7 @@
                 </div>
             </div>
             <div class="modal-footer modal-btns">
-                <a class="waves-effect waves-grey btn modal-close" href="#">
+                <a class="waves-effect btn modal-close" href="#">
                     Cancel <i class="fas fa-times right"></i>
                 </a>
                 <a class="btn" href="{{ url_for('delete_review', review_id=review._id) }}">
