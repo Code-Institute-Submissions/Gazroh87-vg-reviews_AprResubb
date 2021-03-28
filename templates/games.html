@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="row">
     
 {% if session.user|lower == "admin2"|lower %}
     <h3 class="center-align text-shadow">Manage Games</h3>
@@ -7,6 +8,29 @@
     <h3 class="center-align text-shadow">Game Gallery</h3>
 {% endif %}
 
+    <div class="row card-panel col m10 offset-m1 ">
+        <form action="{{ url_for('search_games') }}" method="post" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="fas fa-search prefix"></i>
+                    <input type="text" name="query-games" id="query-games" class="validate" required>
+                    <label for="query-games">Search Games</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_games') }}" class="red btn text-shadow"><i class="fas fa-undo-alt left"></i>Reset</a>
+                    <button type="submit" class="green darken-1 btn text-shadow">
+                        <i class="fas fa-search left"></i> Search
+                    </button>
+                </div>
+            </div>
+        </form>
+        {% if session.user %}
+            <a class="col s12 m4 waves-effect btn" href="{{ url_for('add_game') }}">
+            Add Game <i class="fas fa-plus"></i>
+            </a>
+        {% endif %}
+    </div>
+</div>
     <!-- Game gallery -->
     <section>
         <div class="gallery container">
@@ -15,7 +39,7 @@
                     <div class="col s12 m6 l4 card-grid">
                         <div class="card text-shadow" id="{{ game.game_id }}" >
                             <div class="card-content">
-                                <span class="card-title center-align">{{ game.title }}</span>
+                                <span class="card-title center-align"><a href="{{ url_for('find_game', title=game.title) }}">{{ game.title }}</a></span>
                                 <div class="card-image waves-effect waves-block waves-light">
                                     <img src="{{ game.img_url }}">
                                 </div>
@@ -32,8 +56,6 @@
                             <div class="card-action center-align">
                                 {% if session.user|lower == "admin2"|lower %}
                                     <a data-target="{{ game._id }}" class="btn-small red modal-trigger">Delete</a>
-                                {% endif %}
-                                {% if session.user|lower == game.added_by|lower %}
                                     <a href="{{ url_for('edit_game', game_id=game._id) }}" class="btn-small amber darken-3">Edit</a>
                                 {% endif %}
                             </div>
