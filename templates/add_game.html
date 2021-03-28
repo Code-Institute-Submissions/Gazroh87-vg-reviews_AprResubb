@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align text-shadow">Add Game</h3>
+
+    <div class="row card-panel">
+    <form class="col s12" method="POST" action="{{ url_for('add_game') }}">
+        <!-- game input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-heading prefix"></i>
+                <input id="add_title" name="add_title" class="validate" required>
+                <label for="add_title">Game Title</label>
+            </div>
+        </div>
+        <!--Image URL Input-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-file-image prefix"></i>
+                <input 
+                    id="img_url" 
+                    name="img_url" 
+                    minlenght="7" 
+                    type="url" 
+                    pattern="https://.*" 
+                    class="validate lazyload" 
+                    required>
+                <label for="img_url">Enter Image's URL</label>
+            </div>
+        </div>
+        <!-- description input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pen-square prefix"></i>
+                <textarea id="description" name="description" minlength="200" maxlength="2500"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="description">Description
+                    <i class="fas fa-info-circle tooltipped"
+                        data-position="top"
+                        data-tooltip="Minimum 200 characters">
+                    </i>
+                </label>
+            </div>
+        </div>
+        <!--Genre Select Field-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-gamepad prefix"></i>
+                <select id="genre" name="genre" class="validate" required>
+                <option value="" disabled selected>Choose Genre</option>
+                {% for genre in genres %}
+                    <option value="{{ genre.genre }}">{{ genre.genre }}</option>
+                {% endfor %}                            
+                </select>
+                <label for="genre">Genre</label>
+            </div>
+        </div>
+        <!--Developer/Publisher Name Input-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-file-signature prefix"></i>
+                <input id="developer" name="developer" type="text" minlength="5"
+                    maxlength="25" class="validate" required>
+                <label for="developer">Developer</label>
+            </div>
+        </div>
+        <!-- platform selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-tv prefix"></i>
+                <select id="platform" name="platform" class="validate" required>
+                    <option value="" disabled selected>Choose Platform</option>
+                    {% for platform in platforms %}
+                        <option value="{{ platform.platform }}">{{ platform.platform }}</option>
+                    {% endfor %}
+                </select>
+                <label for="platform">Platform</label>
+            </div>
+        </div>
+        <!--Release Year Input-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-calendar-alt prefix"></i>
+                <input id="year" name="year" type="text" minlength="4"
+                    maxlength="4" class="validate" required>
+                <label for="year">Year Released</label>
+            </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a class="btn-large green darken-1 text-shadow waves-effect"
+                    href="{{ url_for('get_games') }}">Cancel <i class="fas fa-times-circle"></i>
+                </a>
+                <button type="submit" class="btn-large red text-shadow">
+                    Add Game <i class="fas fa-plus-square right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
