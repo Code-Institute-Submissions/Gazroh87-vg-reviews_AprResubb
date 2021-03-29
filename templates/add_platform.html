@@ -12,6 +12,21 @@
                         maxlength="25" class="validate" required>
                         <label for="platform">Enter Platform Name</label>
                     </div>
+                    <!--Image URL Input-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-file-image prefix"></i>
+                            <input 
+                                id="img_url" 
+                                name="img_url" 
+                                minlenght="7" 
+                                type="url" 
+                                pattern="https://.*" 
+                                class="validate lazyload" 
+                                required>
+                            <label for="img_url">Enter Image's URL</label>
+                        </div>
+                    </div>
                     <div class="modal-footer modal-btns">
                         <a class="btn-large red text-shadow waves-effect"
                             href="{{ url_for('get_platforms') }}">Cancel <i class="fas fa-times-circle"></i>
