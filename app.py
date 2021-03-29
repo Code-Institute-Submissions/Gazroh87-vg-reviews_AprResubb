@@ -222,7 +222,7 @@ def edit_game(game_id):
 
 @app.route("/delete_game/<game_id>")
 def delete_game(game_id):
-    mongo.db.geames.remove({"_id": ObjectId(game_id)})
+    mongo.db.games.remove({"_id": ObjectId(game_id)})
     flash("Game Deleted Successfully")
     return redirect(url_for("get_games"))
 
@@ -245,7 +245,7 @@ def add_genre():
         genre = {
             "genre": request.form.get("genre")
         }
-        mongo.db.games.insert_one(genre)
+        mongo.db.genres.insert_one(genre)
         flash("Genre Added Successfully!")
         return redirect(url_for("get_genres"))
 
@@ -259,7 +259,7 @@ def edit_genre(genre_id):
             "genre": request.form.get("genre")
         }
         mongo.db.genres.update({"_id": ObjectId(genre_id)}, submit)
-        flash("Genre Changes Successfuly!")
+        flash("Genre Changes Successfully!")
         return redirect(url_for("get_genres"))
 
 
@@ -274,6 +274,45 @@ def delete_genre(genre_id):
 def get_platforms():
     platforms = list(mongo.db.platforms.find().sort("platform", 1))
     return render_template("platforms.html", platforms=platforms)
+
+
+@app.route("/add_platform", methods=["GET", "POST"])
+def add_platform():
+    if request.method == "POST":
+        platform = {
+            "platform": request.form.get("platform"),
+            "img_url": request.form.get("img_url")
+        }
+        mongo.db.platforms.insert_one(platform)
+        flash("Platform Added Successfully!")
+        return redirect(url_for("get_platforms"))
+
+    return render_template("add_platform.html")
+
+
+@app.route("/edit_platform/<platform_id>", methods=["GET", "POST"])
+def edit_platform(platform_id):
+    if request.method == "POST":
+        submit = {
+            "platform": request.form.get("platform"),
+            "img_url": request.form.get("img_url")
+        }
+        mongo.db.platforms.update({"_id": ObjectId(platform_id)}, submit)
+        flash("Platform Edited Successfully!")
+        return redirect(url_for("get_platforms"))
+
+
+@app.route("/delete_platform/<platform_id>")
+def delete_platform(platform_id):
+    mongo.db.platforms.remove({"_id": ObjectId(platform_id)})
+    flash("Genre Deleted Successfully")
+    return redirect(url_for("get_platforms"))
+
+
+@app.route("/find_platform/<platform>", methods=["GET", "POST"])
+def find_platform(platform):
+    reviews = list(mongo.db.reviews.find({"platform": platform}))
+    return render_template("reviews.html", reviews=reviews)
 
 
 if __name__ == "__main__":
