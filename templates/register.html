@@ -12,8 +12,12 @@
                     <i class="fas fa-user-tag prefix"></i>
                     <input id="username" name="username" type="text" minlength="5" maxlength="16"
                         pattern="^[a-zA-Z0-9]{5,16}$" class="validate" required>
-                    <label for="username">USERNAME:</label>
-                    <span>*5-16 characters long using only letters and numbers</span>
+                    <label for="username">Enter Username:
+                    <i class="fas fa-info-circle tooltipped"
+                        data-position="top"
+                        data-tooltip="Username must be 5 to 16 characters long and contain only letters and numbers.">
+                    </i>
+                    </label>
                 </div>
             </div>
             <!-- password -->
@@ -22,8 +26,12 @@
                     <i class="fas fa-user-lock prefix"></i>
                     <input id="password" name="password" type="password" minlength="8" maxlength="16"
                         pattern="^[a-zA-Z0-9]{8,16}$" class="validate" required>
-                    <label for="password">PASSWORD:</label>
-                    <span>*8-16 characters long using only letters and numbers)</span>
+                    <label for="password">Enter Password:
+                    <i class="fas fa-info-circle tooltipped"
+                        data-position="top"
+                        data-tooltip="Password must be 8 to 16 characters long and contain only letters and numbers.">
+                    </i>
+                    </label>
                 </div>
             </div>
             <!-- register -->
