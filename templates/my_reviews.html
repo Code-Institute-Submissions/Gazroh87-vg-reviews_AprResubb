@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+
+    <h3 class="center-align text-shadow">My Reviews</h3>
+
+</div>
+<!-- Review gallery -->
+<section class="row">
+    <ul class="collapsible expandable popout">
+        {% for review in reviews %}
+            <li>
+                <div class="col s12 card-grid"></div>
+                    <div class="card card-action collapsible-header text-shadow" id="{{ review.review_id }}">
+                        <div class="col s3">
+                            <i class="fas fa-caret-down"></i>
+                                {% if session.user|lower == "admin2"|lower %}
+                                    <a data-target="{{ review._id }}" class="btn-small green accent-4 modal-trigger">Delete</a>
+                                {% endif %}
+                                {% if session.user|lower == review.reviewed_by|lower %}
+                                    <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn-small amber darken-3">Edit</a>
+                                {% endif %}
+                        </div>
+                        <div class="col s9">
+                            <span class="card-title center-align">{{ review.title }}</span>
+                            {% if review.completed == "on" %}
+                                <i class="fas fa-clipboard-check yellow-text text-lighten-2 tooltipped" data-position="right"
+                                data-tooltip="Game Completed"></i>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <div class="game-data">
+                            <ul class="flow-text"> 
+                                <li>Platform: {{ review.platform }}</li>
+                                <li></li>
+                                <li>Reviewed by: {{ review.reviewed_by }}</li>
+                            </ul>
+                        </div>
+                        <div class="card-content flow-text">
+                            <p class="review-txt">{{ review.review }}</p>
+                        </div>
+                        <span class="reviewed-by left">by <strong>{{ review.reviewed_by }}</strong></span>
+                        <div class="card-action">
+                            {% if session.user|lower == review.reviewed_by|lower %}
+                                <a href="{{ url_for('edit_review', review_id=review._id) }}"
+                            class="btn-small text-shadow left edit-btn">Edit Review <i
+                                class="fas fa-edit"></i></a>
+                            {% endif %}
+                            {% if session.user|lower == "admin2"|lower %}
+                                <a data-target="{{ review._id }}" class="btn-small del-btn right modal-trigger">
+                            Delete <i class="fas fa-trash right"></i>
+                                </a>
+                            {% endif %}                        
+                        </div>
+                    </div>
+                <!-- Delete Review Modal -->
+                <div id="{{ review._id }}" class="modal center-align">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col s12">
+                                <h3 class="red-text flow-text"><strong><i
+                                            class="fas fa-exclamation-circle"></i>Warning: Once you delete a review it cannot be restored!</strong></h3>
+                                <h3 class="red-text flow-text"><strong>Are you sure you want to delete this review?</strong></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer modal-btns">
+                        <a class="waves-effect btn modal-close" href="#">
+                            Cancel <i class="fas fa-times right"></i>
+                        </a>
+                        <a class="btn" href="{{ url_for('delete_review', review_id=review._id) }}">
+                            Delete <i class="fas fa-trash right"></i>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endblock %}
