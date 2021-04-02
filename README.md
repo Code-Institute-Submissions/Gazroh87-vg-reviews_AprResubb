@@ -46,19 +46,18 @@ These are all questions I asked myself throughout the UX design process.
 
 #### Goals for the main users:
 
-- TO BE ADDED IN FUTURE
-
-**User expectations:**
-
-- TO BE ADDED IN FUTURE
+- Have an easily accessible game review website to share their gaming experiences and recommendations.
+- Have the ability to add reviews for existing games and add new games for reviewing if required.
+- Have an enjoyable experience discovering new games and including views and opinions on existing games they have 
+  already played.
 
 #### Goals as the developer
 
-- TO BE ADDED IN FUTURE
-
-**Developer expectations:**
-
-- TO BE ADDED IN FUTURE
+- Demonstrate a solid understanding and utilization of Python, MongoDB and Heroku.
+- Build a friendly and useful game review web app.
+- Make the website easy to use and navigate around, providing a positive user experience.
+- Build upon my portfolio with another great project.
+- Increase the database usage with new users and content.
 
 ### **User Stories**
 
@@ -174,12 +173,24 @@ as an original concept design to get the layout of each part or a particular fea
   the website easily accessible and simple to navigate.
 - A user-friendly interface.
 - Attractive, minimalistic design with visuals and information presented clearly and concisely.
+- Easy to read fonts.
+- Fixed navigation bar visible across all pages, including menu dropdowns and brand logo always linking back to the 
+  landing page.
+- Interactive buttons for seamless navigation.
+- Carousel.
+- Forms for registering, login and adding/editing reviews, games, genres and platforms. These forms use input fields, 
+  text area fields, selection dropdowns and buttons for submitting/saving changes to the database and user accounts.
+- Modals for delete confirmation.
+- Search bars allow the user to search for reviews and games by keywords using text index searching.
+- User Accounts.
+- 404 Page.
 
 - TO BE UPDATED IN FUTURE
 
 ### **Future features/improvements to be implemented**
 
-- TO BE ADDED IN FUTURE
+- Integrate bookmarking of reviews.
+- Add text formatting to add/edit review forms.
 
 ---
 
@@ -314,7 +325,10 @@ My process of testing includes:
 
 A typical instance of testing would involve the following:
 
-- TO BE UPDATED IN FUTURE
+- Open the website on the different web browsers and manually test all links.
+- Open dev tools for testing design elements on mobile and tablet screen sizes.
+- Login as admin user for testing.
+- Login as regular user for testing.
 
 My website is to be tested on the latest popular web browsers including:
 
@@ -341,6 +355,25 @@ ensure there are no syntax errors in the project code.
 
 ### **User Story Testing**
 
+- Clear login/register buttons are visible upon users entering the website.
+- Login and register links are included in the nav meanu and displays 'logout' and the user's Username if they are logged in.
+- As the same navigation is presented across every page of the website to a returning user, currently logged out, 
+  the user can login/register from any page.
+- If a user is logged in, the button will display 'logout' and the user's Username.
+- The user is redirected to their account page that contains a button to add a review or game.
+- Once the user has clicked on the login button, they are directed to the login page, where there is a link to the 
+  account registration page.
+- Validation is included for inoput fields to let the user know if what they have entered in a text field is valid 
+  through colour formatting.
+- An instantly recognisable info icon with tooltip lets the user know how many characters are required and which 
+  characters can be used.
+- Success and error messages are flashed between the navbar and main content of the page depending on the result.
+- When a user is logged in, an add review button is visible to them upon first view of the website.
+- The add review link is always accessible to the user via the nav menu while they are logged in.
+- When a registered user visits the reviews page, an 'Add Review' button is presented under the search bar.
+- When the user clicks on 'Add Review', they are directed to the add review page which supplies them with a form with 
+  text input fields to fill in.
+- Once the user has added a review, the user is redirected to the My Reviews page, where they can see their posted review(s).
 - TO BE UPDATED IN FUTURE
 
 ### **Bugs Encountered**
@@ -467,15 +500,26 @@ When you clone a repository, the repository is copied on to your local machine.
 
 ### Code
 
-- TO BE ADDED IN FUTURE
+- [Heroku](https://en.wikipedia.org/wiki/Heroku) - Heroku's excellent deployment system was used to supply the 
+  website for public viewing, thanks to it's connection to gitpod.
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web) - Referenced for best practices for lists and images, 
+  as well as the smooth scrolling functionality.
+- TO BE UPDATED IN FUTURE
 
 ### Content
 
-- TO BE ADDED IN FUTURE
+- [RandomKeygen](https://randomkeygen.com/) - Random Key Generator provides Fort Knox Passwords for password security.
+- [Font Awesome](https://fontawesome.com/) - Font Awesome was used to provide the icons throughout the website for 
+  aesthetic and UX design purposes. Icons give the user additional context from the first glance.
+- [Materialize](https://materializecss.com/) - Materialize CSS, components and JavaScript were used throughout the website.
+  These include the Materialize Grid system, helpers, buttons, cards, navigation, carousel, dropdowns, modals, 
+  parallax, and tooltips.
 
 ### Media
 
-- TO BE ADDED IN FUTURE
+- - [Favicon Converter](https://favicon.io/favicon-converter/) - This Favicon converter was used to create the favicon 
+  based on my brand logo, to be displayed on the browser tab and bookmarks bar. Filepath is static/favicons/favicon.ico
+- TO BE UPDATED IN FUTURE
 
 ### Useful information sources
 
@@ -485,7 +529,14 @@ When you clone a repository, the repository is copied on to your local machine.
 
 ### Special thanks / Acknowledgements
 
-- TO BE ADDED IN FUTURE
+- Thanks to Mentors for their knowledge and support.
+- Thanks to Code Institute and Tim Nelson for giving me the knowledge, skills and the Mini Project template 
+  presented during the course for help in getting started and completing this project.
+- Thanks to Code Institute's tutors for help and support with completing challenges.
+- Thansk to Code Institute's Slack community for providing advice and support.
+- Thanks to my family for all their support and encouragement with the project.
+
+Thanks for viewing my project/website.
 
 ---
 
