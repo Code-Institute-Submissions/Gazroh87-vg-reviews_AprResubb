@@ -203,11 +203,11 @@ def delete_review(review_id):
 @app.route("/my_reviews")
 def my_reviews():
     """
-    Finds reviews created by the session user
+    Finds reviews added by the session user
     and sorts them by most recent
     """
     reviews = list(mongo.db.reviews.find(
-        {"created_by": session["user"]}).sort("_id", -1))
+        {"reviewed_by": session["user"]}).sort("_id", -1))
     return render_template("my_reviews.html", reviews=reviews)
 
 
