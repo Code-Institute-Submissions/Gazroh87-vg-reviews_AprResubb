@@ -24,7 +24,7 @@
                         <div class="card-content">
                             <span class="card-title center-align"><a href="{{ url_for('find_platform', platform=platform.platform) }}">{{ platform.platform }}</a></span>
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img src="{{ platform.img_url }}">
+                                <img src="{{ platform.img_url }}" alt="Platform image" loading="lazy">
                             </div>
                         </div>
                         <div class="card-action center-align">
