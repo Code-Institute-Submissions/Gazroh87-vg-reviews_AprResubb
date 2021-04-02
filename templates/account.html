@@ -6,7 +6,7 @@
             <div class="card-panel black">
                 <h3 class="center-align white-text">{{ username }}'s Account</h3>
                 <br>
-                <a class="waves-effect btn-flat flow-text white overlay-btn show-on-large" href="#">My Reviews</a>
+                <a class="waves-effect btn-flat flow-text white overlay-btn show-on-large" href="{{ url_for('my_reviews') }}">My Reviews</a>
                 <br>
                 <a class="waves-effect btn-flat flow-text white overlay-btn show-on-large" href="{{ url_for('add_review') }}">Add Review</a>
                 <br>
