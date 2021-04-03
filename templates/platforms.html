@@ -29,14 +29,40 @@
                         </div>
                         <div class="card-action center-align">
                             {% if session.user|lower == "admin2"|lower %}
-                                <a data-target="{{ platform._id }}" class="btn-small red modal-trigger">Delete</a>
-                                <a href="{{ url_for('edit_platform', platform_id=platform._id) }}" class="btn-small amber darken-3">Edit</a>
+                                <a data-target="delete{{ loop.index }}" class="btn-small red modal-trigger">Delete</a>
+                                <a data-target="edit{{ loop.index }}" class="btn-small amber darken-3 modal-trigger">Edit</a>
                             {% endif %}
                         </div>
                     </div>
                 </div>
+                <!--Edit Platform Modal-->
+                <div id="edit{{ loop.index }}" class="modal edit-modal center-align">
+                    <div class="modal-content">
+                        <div class="row">
+                            <form method="POST" action="{{ url_for('edit_platform', platform_id=platform._id) }}">
+                                <div class="col s12">
+                                    <input id="platform" name="platform" type="text" minlength="2"
+                                        value="{{ platform.platform }}" maxlength="25" class="validate" required>
+                                    <label for="platform">Platform Name</label>
+                                </div>
+                                <div class="input-field col s12">
+                                        <input id="img_url" value="{{ platform.img_url }}" name="img_url" minlenght="7" type="url" class="validate" required>
+                                        <label for="img_url">Enter Image's URL</label>
+                                    </div>
+                                <div class="modal-footer modal-btns">
+                                    <button type="submit" class="btn">
+                                        Save <i class="fas fa-save"></i>
+                                    </button>
+                                    <a class="waves-effect waves-grey btn modal-close" href="#">
+                                        Cancel <i class="fas fa-times"></i>
+                                    </a>                            
+                                </div>                                   
+                            </form>
+                        </div>
+                    </div>                        
+                </div>
                 <!--Delete Platform Modal-->
-                <div id="{{ platform._id }}" class="modal center-align">
+                <div id="delete{{ loop.index }}" class="modal center-align">
                     <div class="modal-content">
                         <div class="row">
                             <div class="col s12">

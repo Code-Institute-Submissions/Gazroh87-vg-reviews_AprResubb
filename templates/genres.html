@@ -26,16 +26,38 @@
                             <div class="card-image waves-effect waves-block waves-light">
                             </div>
                         </div>
-                        <div class="card-action center-align">
-                            {% if session.user|lower == "admin2"|lower %}
-                                <a data-target="{{ genre._id }}" class="btn-small red modal-trigger">Delete</a>
-                                <a href="{{ url_for('edit_genre', genre_id=genre._id) }}" class="btn-small amber darken-3">Edit</a>
-                            {% endif %}  
-                        </div>
+                        {% if session.user|lower == "admin2"|lower %}
+                            <div class="card-action center-align">
+                                <a data-target="delete{{ loop.index }}" class="btn-small red modal-trigger">Delete</a>
+                                <a data-target="edit{{ loop.index }}" class="btn-small amber darken-3 modal-trigger">Edit</a>
+                            </div>
+                        {% endif %}  
                     </div>
                 </div>
+                <!--Edit Genre Modal-->
+                <div id="edit{{ loop.index }}" class="modal edit-modal center-align">
+                    <div class="modal-content">
+                        <div class="row">
+                            <form method="POST" action="{{ url_for('edit_genre', genre_id=genre._id) }}">
+                                <div class="col s12">
+                                    <input id="genre" name="genre" type="text" minlength="2"
+                                        value="{{ genre.genre }}" maxlength="25" class="validate" required>
+                                    <label for="genre">Genre Name</label>
+                                </div>
+                                <div class="modal-footer modal-btns">
+                                    <button type="submit" class="btn">
+                                        Save <i class="fas fa-save"></i>
+                                    </button>
+                                    <a class="waves-effect waves-grey btn modal-close" href="#">
+                                        Cancel <i class="fas fa-times"></i>
+                                    </a>                            
+                                </div>                                   
+                            </form>
+                        </div>
+                    </div>                        
+                </div>
                 <!--Delete Genre Modal-->
-                <div id="{{ genre._id }}" class="modal center-align">
+                <div id="delete{{ loop.index }}" class="modal center-align">
                     <div class="modal-content">
                         <div class="row">
                             <div class="col s12">
