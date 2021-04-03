@@ -267,6 +267,14 @@ def edit_game(game_id):
         flash("Game Changes Saved!")
         return redirect(url_for("get_games"))
 
+    game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+    genres = mongo.db.genres.find().sort("title", 1)
+    platforms = mongo.db.platforms.find().sort("platform", 1)
+    return render_template("edit_game.html",
+                           game=game,
+                           genres=genres,
+                           platforms=platforms)
+
 
 @app.route("/delete_game/<game_id>")
 def delete_game(game_id):
