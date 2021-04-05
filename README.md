@@ -6,7 +6,7 @@
 
 ### View the live VGReviews Heroku app, click [**>>HERE<<**](https://vgreviews-project.herokuapp.com/)
 
-<img src="static/images/background1.jpg" style="margin: 0;">
+<img src="static/images/readme/vgreviews-demo.png" style="margin: 0;">
 
 ---
 
@@ -358,7 +358,7 @@ I'm using the following physical devices for development and testing:
 The following validators were used to validate all of the HTML, CSS and JavaScript files that make up this project, to
 ensure there are no syntax errors in the project code.
 
-- HTML - [W3C Markup Validation Service](https://validator.w3.org/) - Only Jinja templating produces errors - safe to ignore.
+- HTML - [W3C Markup Validation Service](https://validator.w3.org/) - Only Jinja templating produces errors and warnings - safe to ignore.
 - CSS - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Value Error : font-size Parse Errors are all safe to ignore.
 - JavaScript - [JSHint Validator](https://jshint.com/) - No errors.
 - Python - [PEP8 online](http://pep8online.com/) - All right.
