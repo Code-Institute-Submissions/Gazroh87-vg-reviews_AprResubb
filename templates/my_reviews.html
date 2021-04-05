@@ -2,7 +2,7 @@
 {% block content %}
 <div class="row">
 
-    <h3 class="center-align text-shadow">My Reviews</h3>
+    <h3 class="center-align page-title text-shadow">My Reviews</h3>
 
 </div>
 <!-- Review gallery -->
@@ -67,10 +67,10 @@
                     </div>
                     <div class="modal-footer modal-btns">
                         <a class="waves-effect btn modal-close" href="#">
-                            Cancel <i class="fas fa-times right"></i>
+                            Cancel <i class="fas fa-times"></i>
                         </a>
                         <a class="btn" href="{{ url_for('delete_review', review_id=review._id) }}">
-                            Delete <i class="fas fa-trash right"></i>
+                            Delete <i class="fas fa-trash"></i>
                         </a>
                     </div>
                 </div>

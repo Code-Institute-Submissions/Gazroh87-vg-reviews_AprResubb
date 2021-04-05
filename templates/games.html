@@ -3,12 +3,12 @@
 <div class="row">
     
 {% if session.user|lower == "admin2"|lower %}
-    <h3 class="center-align text-shadow">Manage Games</h3>
+    <h3 class="center-align page-title text-shadow">Manage Games</h3>
 {% else %}
-    <h3 class="center-align text-shadow">Game Gallery</h3>
+    <h3 class="center-align page-title text-shadow">Game Gallery</h3>
 {% endif %}
 
-<div class="row card-panel col m10 offset-m1 ">
+<div class="row card-panel black m10 offset-m1 search-card">
     <form action="{{ url_for('search_games') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-align">
             <div class="input-field col s12 m8">
@@ -41,7 +41,7 @@
                     <div class="card text-shadow" id="{{ game.game_id }}" >
                         <div class="card-content">
                             <span class="card-title center-align"><a href="{{ url_for('find_game', title=game.title) }}">{{ game.title }}</a></span>
-                            <div class="card-image waves-effect waves-block waves-light">
+                            <div class="card-image game-image waves-effect waves-block waves-light">
                                 <img src="{{ game.img_url }}" alt="Game art" loading="lazy" >
                             </div>
                             <div class="game-data">

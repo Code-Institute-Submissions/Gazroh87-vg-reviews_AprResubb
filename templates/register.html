@@ -1,53 +1,53 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align text-shadow">Register Account</h3>
+    <h3 class="center-align page-title text-shadow">Register Account</h3>
 
     <div class="row">
         <form class="col s12 m8 offset-m2 l6 offset-l3" method="POST" action="{{ url_for('register') }}">
-        <div class="card-panel black">
-            <!-- username-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user-tag prefix"></i>
-                    <input id="username" name="username" type="text" minlength="5" maxlength="16"
-                        pattern="^[a-zA-Z0-9]{5,16}$" class="validate" required>
-                    <label for="username">Enter Username:
-                    <i class="fas fa-info-circle tooltipped"
-                        data-position="top"
-                        data-tooltip="Username must be 5 to 16 characters long and contain only letters and numbers.">
-                    </i>
-                    </label>
+            <div class="card-panel black">
+                <!-- username-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-tag prefix"></i>
+                        <input id="username" name="username" type="text" minlength="5" maxlength="16"
+                            pattern="^[a-zA-Z0-9]{5,16}$" class="validate" required>
+                        <label for="username">Enter Username:
+                        <i class="fas fa-info-circle tooltipped"
+                            data-position="top"
+                            data-tooltip="Username must be 5 to 16 characters long and contain only letters and numbers.">
+                        </i>
+                        </label>
+                    </div>
+                </div>
+                <!-- password -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-lock prefix"></i>
+                        <input id="password" name="password" type="password" minlength="8" maxlength="16"
+                            pattern="^[a-zA-Z0-9]{8,16}$" class="validate" required>
+                        <label for="password">Enter Password:
+                        <i class="fas fa-info-circle tooltipped"
+                            data-position="top"
+                            data-tooltip="Password must be 8 to 16 characters long and contain only letters and numbers.">
+                        </i>
+                        </label>
+                    </div>
+                </div>
+                <!-- register -->
+                <div class="row btn-wrapper center-align">
+                    <button type="submit" class="col s12 btn-large white black-text text-shadow register-btn">
+                        <span>Register</span><i class="fas fa-user-plus"></i>
+                    </button>
                 </div>
             </div>
-            <!-- password -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user-lock prefix"></i>
-                    <input id="password" name="password" type="password" minlength="8" maxlength="16"
-                        pattern="^[a-zA-Z0-9]{8,16}$" class="validate" required>
-                    <label for="password">Enter Password:
-                    <i class="fas fa-info-circle tooltipped"
-                        data-position="top"
-                        data-tooltip="Password must be 8 to 16 characters long and contain only letters and numbers.">
-                    </i>
-                    </label>
-                </div>
-            </div>
-            <!-- register -->
-            <div class="row">
-                <button type="submit" class="col s12 btn-large white black-text text-shadow">
-                    <span>Register</span><i class="fas fa-user-plus"></i>
-                </button>
-            </div>
-        </div>
-    </form>
+        </form>
     </div>
     
     <div class="row">
         <div class="col s12">
             <p class="center-align">Already Registered?
-                <a href="{{ url_for('register') }}" class="green-text text-darken-4">Login</a>
+                <a href="{{ url_for('login') }}" class="green-text text-darken-4">Login</a>
             </p>
         </div>
     </div>

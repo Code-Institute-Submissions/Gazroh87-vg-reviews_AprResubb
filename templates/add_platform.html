@@ -1,44 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div id="add_platform" class="card center-align">
-        <div class="card-content">
-            <div class="row">
-                <form method="POST" action="{{ url_for('add_platform') }}">
-                    <h3 class="page-title text-shadow">Add Platform</h3>
-                    <div class="input-field col s12 center-align">
-                        <i class="fas fa-heading prefix"></i>
-                        <input id="platform" name="platform" type="text" minlength="2"
-                        maxlength="25" class="validate" required>
-                        <label for="platform">Enter Platform Name</label>
-                    </div>
-                    <!--Image URL Input-->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="fas fa-file-image prefix"></i>
-                            <input 
-                                id="img_url" 
-                                name="img_url" 
-                                minlenght="7" 
-                                type="url" 
-                                pattern="https://.*" 
-                                class="validate lazyload" 
-                                required>
-                            <label for="img_url">Enter Image's URL</label>
-                        </div>
-                    </div>
-                    <div class="modal-footer modal-btns">
-                        <a class="btn-large red text-shadow waves-effect"
-                            href="{{ url_for('get_platforms') }}">Cancel <i class="fas fa-times-circle"></i>
-                        </a>
-                        <button type="submit" class="btn-large green darken-1 text-shadow waves-effect">
-                            Add Platform <i class="fas fa-plus-square right"></i>
-                        </button>                     
-                    </div>
-                </form>
-            </div>
-        </div>        
-    </div>
+    <h3 class="center-align page-title text-shadow">Add Platform</h3>
 
+    <div class="row card-panel black">
+        <form class="col s12" method="POST" action="{{ url_for('add_platform') }}">
+            <!-- platform input -->
+            <div class="row">
+                <div class="input-field col s12 center-align">
+                    <i class="fas fa-heading prefix"></i>
+                    <input id="platform" name="platform" type="text" minlength="2"
+                    maxlength="25" class="validate" required>
+                    <label for="platform">Enter Platform Name</label>
+                </div>
+                <!--Image URL Input-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-file-image prefix"></i>
+                        <input 
+                            id="img_url" 
+                            name="img_url" 
+                            minlenght="7" 
+                            type="url" 
+                            pattern="https://.*" 
+                            class="validate lazyload" 
+                            required>
+                        <label for="img_url">Enter Image's URL</label>
+                    </div>
+                </div>
+                <!-- submit button -->
+                <div class="row">
+                <div class="col s12 center-align">
+                    <a class="btn-large red text-shadow waves-effect"
+                        href="{{ url_for('get_platforms') }}">Cancel <i class="fas fa-times-circle"></i>
+                    </a>
+                    <button type="submit" class="btn-large green darken-1 text-shadow waves-effect">
+                        Add Game <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
 
 {% endblock %}
