@@ -3,15 +3,15 @@
     
 {% if session.user|lower == "admin2"|lower %}
     <div class="row">
-        <div class="col offset-m3 offset-l4 center-align genre-container">
-            <h3 class="center-align text-shadow">Manage Platforms</h3>
+        <div class="col offset-m3 offset-l4 center-align platform-container">
+            <h3 class="center-align page-title text-shadow">Manage Platforms</h3>
             <a class="waves-effect btn" href="{{ url_for('add_platform') }}">
                 Add Platform <i class="fas fa-plus"></i>
             </a>
         </div>   
     </div>
 {% else %}
-    <h3 class="center-align text-shadow">Platforms</h3>
+    <h3 class="center-align page-title text-shadow">Platforms</h3>
 {% endif %}
 
 <!-- Platform gallery -->
@@ -23,7 +23,7 @@
                     <div class="card text-shadow" id="{{ platform.platform_id }}" >
                         <div class="card-content">
                             <span class="card-title center-align"><a href="{{ url_for('find_platform', platform=platform.platform) }}">{{ platform.platform }}</a></span>
-                            <div class="card-image waves-effect waves-block waves-light">
+                            <div class="card-image platform-image waves-effect waves-block waves-light">
                                 <img src="{{ platform.img_url }}" alt="Platform image" loading="lazy">
                             </div>
                         </div>

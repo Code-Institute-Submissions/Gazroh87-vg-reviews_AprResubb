@@ -3,23 +3,23 @@
 
     <div class="row">
         <div class="col s12 m8 offset-m2 l6 offset-l3">
-            <div class="card-panel black">
-                <h3 class="center-align white-text">{{ username }}'s Account</h3>
+            <div class="card-panel account-btns center-align black">
+                <h3 class="center-align page-title white-text">{{ username }}'s Account</h3>
                 <br>
-                <a class="waves-effect btn-flat flow-text white overlay-btn show-on-large" href="{{ url_for('my_reviews') }}">My Reviews</a>
+                <a class="waves-effect btn flow-text black-text" href="{{ url_for('my_reviews') }}">My Reviews</a>
                 <br>
-                <a class="waves-effect btn-flat flow-text white overlay-btn show-on-large" href="{{ url_for('add_review') }}">Add Review</a>
+                <a class="waves-effect btn flow-text black-text" href="{{ url_for('add_review') }}">Add Review</a>
                 <br>
-                <a class="waves-effect btn-flat flow-text white overlay-btn show-on-large" href="{{ url_for('add_game') }}">Add Game</a>
+                <a class="waves-effect btn flow-text black-text" href="{{ url_for('add_game') }}">Add Game</a>
                 <br>
                 {% if session.user|lower == "admin2"|lower %}
-                    <a class="waves-effect btn-flat flow-text white overlay-btn show-on-large" href="{{ url_for('get_reviews') }}">Manage Reviews</a>
+                    <a class="waves-effect btn flow-text black-text" href="{{ url_for('get_reviews') }}">Manage Reviews</a>
                     <br>
-                    <a class="waves-effect btn-flat flow-text white overlay-btn show-on-large" href="{{ url_for('get_games') }}">Manage Games</a>
+                    <a class="waves-effect btn flow-text black-text" href="{{ url_for('get_games') }}">Manage Games</a>
                     <br>
-                    <a class="waves-effect btn-flat flow-text white overlay-btn show-on-large" href="{{ url_for('get_genres') }}">Manage Genres</a>
+                    <a class="waves-effect btn flow-text black-text" href="{{ url_for('get_genres') }}">Manage Genres</a>
                     <br>
-                    <a class="waves-effect btn-flat flow-text white overlay-btn show-on-large" href="{{ url_for('get_platforms') }}">Manage Platforms</a>
+                    <a class="waves-effect btn flow-text black-text" href="{{ url_for('get_platforms') }}">Manage Platforms</a>
                 {% endif %}   
             </div>
         </div>

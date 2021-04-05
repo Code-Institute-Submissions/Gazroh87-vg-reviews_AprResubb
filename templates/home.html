@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="parallax">
+            <div class="parallax image-wrapper">
                 <img class="hero-image" src="/static/images/background1.jpg"
                 alt="Collage of iconic video game characters" loading="lazy">
             </div>
@@ -94,17 +94,17 @@
         </div>
     </div>
 </section>
+<!--Platforms Carousel-->
 <section class="carousel-wrapper">
     <div class="container">
         <div class="section">
             <div class="row">
-                <!--Platforms Carousel-->
                 <h4 class="center-align carousel-title text-shadow">Find Reviews by Platform</h4>
                 <div class="carousel">
                     {% for platform in platforms %}
-                    <a class="carousel-item" href="{{ url_for('get_platforms', platform=platform.platform) }}">
+                    <a class="carousel-item" href="{{ url_for('find_platform', platform=platform.platform) }}">
                     <img
-                        class="carousel-img" loading="lazy"
+                        class="carousel-image" loading="lazy"
                         src="{{ platform.img_url}}"
                         alt="{{ platform.platform }} image"/>         
                     </a>

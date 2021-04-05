@@ -5,7 +5,9 @@
 }
 
 body {
+    background-color: #fff;
     display: flex;
+    max-width: 100vw;
     min-height: 100vh;
     flex-direction: column;
   }
@@ -16,7 +18,12 @@ body {
 
 /*-- Text */
 
-  h1 {
+  h1,
+  nav li>a:hover,
+  nav .input-field label i,
+  .tabs.tabs-transparent .tab a:hover,
+  .icon-block h2,
+  form i {
     color: #39FF14;
   }
 
@@ -30,6 +37,15 @@ body {
 
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5)
+}
+
+.input-field input,
+.input-field > label {
+    color: white;
+}
+
+.page-title {
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));;   
 }
 
 /*-- Header containing Navigation */
@@ -59,7 +75,7 @@ body {
 
 nav .nav-wrapper .sidenav-trigger i {
     height: 32px;
-    border: 1px solid white;
+    border: 1px solid #fff;
     text-align: center;
     line-height: 1;
     font-size: 18px;
@@ -70,8 +86,8 @@ nav .nav-wrapper .sidenav-trigger i {
     text-shadow: 4px 4px 6px rgba(0,0,0,0.4);
 }
 
-nav .input-field label i {
-    color: #39FF14;
+.nav-extended.row {
+    margin-bottom: 0;
 }
 
 .search-input {
@@ -101,10 +117,18 @@ nav .input-field label i {
     border-left: 4px solid #39FF14;
 }
 
+.sidenav li>a {
+    color: #000;
+}
+
+.sidenav li>a:hover {
+    background-color: #39FF14;
+}
+
 .sidenav-header .sidenav-close {
     float: right;
     position: relative;
-    border: 1px solid white;
+    border: 1px solid #fff;
     margin: 0 2px;
     text-align: center;
     line-height: 1;
@@ -124,13 +148,18 @@ nav .input-field label i {
 }
 
 .sidenav-search {
-    background-color: black;
+    background-color: #000;
 }
 
 /*-- Flashed Messages */
 
-.flashed h4 {
+.flashes h4 {
+    font-size: calc(18px + (25 - 18) * ((100vw - 300px) / (1600 - 300)));
     line-height: 2;
+}
+
+.row.flashes, .flashes h4 {
+    margin: 0;
 }
 
 /*-- Parallax */
@@ -152,6 +181,10 @@ nav .input-field label i {
 
 /* Call Buttons and Icons */
 
+.btn {
+    border-radius: 5px;
+}
+
 .btn-large {
     margin: 10px;
 }
@@ -163,21 +196,13 @@ nav .input-field label i {
 }
 
 .call-btns .btn-large {
-    background-color: black;
-    color: white;
+    background-color: #000;
+    color: #fff;
     border: 2px solid #39FF14;
 }
 
 .icon-block {
     padding: 0 15px;
-}
-
-.icon-block h2 {
-    color: #39FF14;
-}
-
-form i {
-    color: #39FF14;
 }
 
 button > .btn-large {
@@ -197,18 +222,41 @@ button > .btn-large {
     margin: 5px;
 }
 
+.btn-small, .edit-btn {
+    border-radius: 5px;
+    font-size: calc(10px + (11 - 10) * ((100vw - 300px) / (1600 - 300)));;
+}
+
+.account-btns {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;    
+}
+
+.account-btns a {
+    background-color: #fff;
+    margin: 15px 0;
+}
+
+.account-btns a:hover {
+    background-color: #39FF14;
+}
+
+.edit-btns {
+    display: grid;
+    padding: 12px;
+    grid-row-gap: 14px;
+}
+
+.login-btn, .register-button {
+    width: 250px;
+    height: 55px;
+}
+
 /*-- Inputs */
 
 .input-field span {
     color: #9e9e9e;
-}
-
-.input-field input {
-    color: white;
-}
-
-.input-field > label {
-    color: white;
 }
 
 input[type=text]:not(.browser-default),
@@ -224,38 +272,33 @@ input[type=password]:not(.browser-default) {
 
 /*-- Carousel */
 
+.carousel-wrapper {
+    height: 280px;
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;   
+}
+
+.carousel {
+    height: 360px;
+    top: -80px;
+}
+
 .carousel-title {
     font-weight: 500;
     font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     margin-bottom: 35px;
 }
 
-.carousel-img {
+.carousel-image {
     border-radius: 50%;
     opacity: 0.85;
-}
-
-.carousel-img2 {
-    border-radius: 50%;
 }
 
 .carousel .carousel-item > img {
     height: inherit;
     object-fit: contain;
-}
-
-.carousel-item p {
-    color: #616161;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 500;
-    font-size: calc(15px + (25 - 15) * ((100vw - 300px) / (1600 - 300)));
-    font-weight: 500;
-    background-color: transparent;
-    padding: 5px 10px 56px 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 /*-- Cards */
@@ -291,6 +334,10 @@ input[type=password]:not(.browser-default) {
     font-size: calc(13px + (15 - 13) * ((100vw - 300px) / (1600 - 300)));
 }
 
+.game-data {
+   padding: 0 30px;
+}
+
 .review-txt {
     height: 300px;
     overflow: hidden;
@@ -304,6 +351,62 @@ input[type=password]:not(.browser-default) {
     overflow: hidden;
     text-overflow: ellipsis;
     padding-bottom: 10px;
+}
+
+.card-panel:not(.search-card, 
+                .review-card, 
+                .account-btns) {
+    margin-top: 30px;
+}
+
+.genre-container a,
+.platform-container a {
+    font-size: calc(12px + (17 - 12) * ((100vw - 300px) / (1600 - 300)));;
+    margin-top: 10px;  
+}
+
+.game-image img,
+.platform-image img {
+    object-fit: contain;
+}
+
+/*-- Modals */
+
+.modal {
+    top: 20% !important;
+    border-radius: 6px;
+    padding: 0 10px;
+    max-width: 400px;
+    text-transform: none;   
+}
+.edit-modal {
+    height: 195px;
+}
+
+.modal .modal-content {
+    padding: 24px 30px 0px 30px;
+}
+
+.modal-btns .btn {
+    margin-right: 13px;  
+}
+
+/*-- Custom 404 & 500 */
+
+.row .error h3, 
+.row .error h4 {
+    font-size: calc(14px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.card-panel.error {
+    height: auto;
+    margin-top: -370px;
+}
+
+.home-btn {
+    border-radius: 5px;
+    font-size: calc(10px + (11 - 10) * ((100vw - 300px) / (1600 - 300)));;
+    margin-bottom: 25px;
 }
 
 /*-- Footer */
@@ -324,7 +427,7 @@ footer .social-media-links li {
 }
 
 .social-link:hover {
-    color: white;
+    color: #fff;
 }
 
 footer .copyright {
@@ -377,5 +480,25 @@ footer .copyright {
     #game-gallery {
         width: 75%;
         max-width: 1920px;
+    }
+}
+
+@media only screen and (min-width:1461px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card-title {
+        font-size: 18px;
+    }
+
+    .row.edit-btns {
+        display: block;
+        
+    }
+
+    .modal-btns .btn {
+        margin-right: 42px;  
     }
 }
