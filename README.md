@@ -301,13 +301,20 @@ As you can see above, the VGReviews database on MongoDB features 5 inter-related
 
 - [Grammarly](https://www.grammarly.com/) - Grammarly is used to reduce grammar errors.
 
-- [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) -
+- [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - The Chrome DevTools were used throughout
+  the building, testing and debugging of the website to quickly see the result of any changes made to any code via visualization
+  in a live browser tab and/or the developer console.
 
-- [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/?utm_source=devtools) -
+- [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/?utm_source=devtools) - Google Lighthouse was used for
+  website auditing. This addon of DevTools can generate a report of each web pages performance, accessibility, best practices
+  and SEO to aid in the testing and improvement of my website.
 
-- [Autoprefixer CSS](https://autoprefixer.github.io/) -
+- [Autoprefixer CSS](https://autoprefixer.github.io/) - Autoprefixer was used to help with making the CSS code compatible and
+  valid for all internet browsers as much as possible.
 
-- [Am I Responsive Design?](http://ami.responsivedesign.is/) -
+- [Am I Responsive Design?](http://ami.responsivedesign.is/) - This web tool was used to generate screencaps of my website at
+  different viewport sizes to form a static demo presentation of my website's responsiveness as can be seen towards the top of this
+  document.
 
 ---
 
@@ -350,6 +357,11 @@ I'm using the following physical devices for development and testing:
 
 The following validators were used to validate all of the HTML, CSS and JavaScript files that make up this project, to
 ensure there are no syntax errors in the project code.
+
+- HTML - [W3C Markup Validation Service](https://validator.w3.org/) - Only Jinja templating produces errors - safe to ignore.
+- CSS - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Value Error : font-size Parse Errors are all safe to ignore.
+- JavaScript - [JSHint Validator](https://jshint.com/) - No errors.
+- Python - [PEP8 online](http://pep8online.com/) - All right.
 
 - TO BE UPDATED IN FUTURE
 
